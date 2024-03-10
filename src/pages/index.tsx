@@ -11,3 +11,10 @@ export { Landing } from "./Landing.page";
 * 
 */
 export { NotFound } from "./404.page";
+
+/*
+*
+* @page Coming Soon 
+* 
+*/
+export { ComingSoon } from "./ComingSoon.page";
