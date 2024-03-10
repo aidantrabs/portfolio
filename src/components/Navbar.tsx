@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
                     <a href="https://linkedin.com/in/aidan-traboulay" className="text-white text-xl">
                         <FaLinkedin />
                     </a>
-                    <a href="/edit-profile" className="text-white text-xl">
+                    <a href="/coming-soon" className="text-white text-xl">
                         <FaEdit />
                     </a>
                 </div>
