@@ -7,6 +7,13 @@ export { Navbar } from "./Navbar";
 
 /*
  *
+ * @component Divider 
+ * 
+ */
+export { Divider } from "./Divider";
+
+/*
+ *
  * @section HeroSection 
  * 
  */
