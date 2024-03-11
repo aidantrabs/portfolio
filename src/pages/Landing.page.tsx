@@ -1,4 +1,4 @@
-import { Navbar, AboutSection, ExperienceSection, Footer, HeroSection, ProjectSection } from "@components";
+import { Navbar, Divider, AboutSection, ExperienceSection, Footer, HeroSection, ProjectSection } from "@components";
 
 const Landing = () => {
     return (
@@ -9,21 +9,13 @@ const Landing = () => {
                 <div className="relative mx-auto flex max-w-full flex-col gap-16 overflow-hidden p-8 leading-relaxed max-md:mt-16 md:p-16">
                     <div className="flex flex-col gap-12">
                         <HeroSection />
-                        <p className="max-w-full overflow-hidden whitespace-nowrap text-accent-element">
-                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-                        </p>
+                        <Divider />
                         <AboutSection />
-                        <p className="max-w-full overflow-hidden whitespace-nowrap text-accent-element">
-                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-                        </p>
+                        <Divider />
                         <ExperienceSection />
-                        <p className="max-w-full overflow-hidden whitespace-nowrap text-accent-element">
-                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-                        </p>
+                        <Divider />
                         <ProjectSection />
-                        <p className="max-w-full overflow-hidden whitespace-nowrap text-accent-element">
-                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-                        </p>
+                        <Divider />
                         <div className="spacer" style={{ height: "2vh" }} />
                         <Footer />
                     </div>
