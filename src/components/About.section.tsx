@@ -36,7 +36,7 @@ const aboutInfo = [
 
 const actionInfo = {
     description: "Learn more!",
-    link: "https://aidantraboulay.tech/Resume.pdf"
+    link: "https://aidantraboulay.dev/Resume.pdf"
 };
 
 const AboutSection: React.FC = () => {
