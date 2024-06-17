@@ -28,9 +28,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technolog
                         </div>
                     </div>
 
-                    <h3 className="text-lg leading-6 font-medium text-white mb-3 py-6">
+                    <h3 className="text-lg leading-6 font-medium text-white py-6">
                         {title}
                     </h3>
+                    <hr className="w-1/2 border-accent-element border-2 mb-2"/>
                     <p className="text-base text-gray-300 mb-4">
                         {description}
                     </p>
