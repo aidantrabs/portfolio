@@ -74,3 +74,10 @@ export { Footer } from "./Footer";
  * 
  */
 export { FadeSection } from "./FadeSection";
+
+/*
+ *
+ * @component ScrollButton 
+ * 
+ */
+export { ScrollButton } from "./ScrollButton";
