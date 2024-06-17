@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
             
             <footer className="flex justify-center gap-8">
                 <a className="text-sm underline-offset-2 opacity-70 hover:underline text-white" 
-                    href="https://aidantraboulay.tech/Resume.pdf"
+                    href="https://aidantraboulay.dev/Resume.pdf"
                     target="_blank"
                     rel="noreferrer">
                     Résumé
