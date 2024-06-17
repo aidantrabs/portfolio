@@ -101,6 +101,7 @@ const ExperienceSection: React.FC = () => {
                     <h1 className="relative flex text-3xl lg:text-4xl font-bold leading-none text-white mb-6">
                         <GoPerson size={35} className="mr-3"/> Experience
                     </h1>
+
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
                         <div className="flex flex-col lg:col-span-1 space-y-2">
                             {Object.keys(experienceData).map((companyKey) => (
@@ -123,6 +124,8 @@ const ExperienceSection: React.FC = () => {
                                 <h3 className="text-2xl font-bold">
                                     {experienceData[selectedExperience].title}
                                 </h3>
+                                <hr className="w-1/2 border-accent-element border-2 mb-2"/>
+
                                 <p className="">
                                     {experienceData[selectedExperience].date}
                                 </p>
