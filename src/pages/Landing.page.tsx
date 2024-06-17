@@ -1,4 +1,4 @@
-import { Navbar, Divider, AboutSection, ExperienceSection, Footer, HeroSection, ProjectSection } from "@components";
+import { Navbar, Divider, AboutSection, ExperienceSection, Footer, HeroSection, ProjectSection, ScrollButton } from "@components";
 
 const Landing = () => {
     return (
@@ -18,6 +18,7 @@ const Landing = () => {
                         <Divider />
                         <div className="spacer" style={{ height: "2vh" }} />
                         <Footer />
+                        <ScrollButton />
                     </div>
                 </div>
             </div>
