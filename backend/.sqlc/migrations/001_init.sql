@@ -1,4 +1,5 @@
 -- +goose Up
+-- +goose StatementBegin
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
@@ -48,8 +49,16 @@ CREATE TABLE experience (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE INDEX idx_projects_slug ON projects(slug);
+CREATE INDEX idx_projects_featured ON projects(featured);
+CREATE INDEX idx_experience_company ON experience(company);
+CREATE INDEX idx_experience_current ON experience(current);
+-- +goose StatementEnd
+
 -- +goose Down
+-- +goose StatementBegin
 DROP TABLE IF EXISTS experience;
 DROP TABLE IF EXISTS about;
 DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS users;
+-- +goose StatementEnd
