@@ -1,36 +1,40 @@
 package config
 
 import (
+	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 
-	env "github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
 
-type Config struct {
-	DBPath    string
-	Port      string
-	JWTSecret string
-	AdminUser string
-	AdminPass string
-}
-
 func LoadConfig() (*Config, error) {
-	env.Load()
+	_, b, _, _ := runtime.Caller(0)
+	projectRoot := filepath.Join(filepath.Dir(b), "../..")
 
-	config := &Config{
-		DBPath:    getEnv("DB_PATH", "data.db"),
-		Port:      getEnv("PORT", "8080"),
-		JWTSecret: getEnv("JWT_SECRET", ""),
-		AdminUser: getEnv("ADMIN_USER", "admin"),
-		AdminPass: getEnv("ADMIN_PASS", "admin"),
+	if err := godotenv.Load(filepath.Join(projectRoot, ".env")); err != nil {
+		return nil, fmt.Errorf("error loading .env file: %w", err)
 	}
 
-	return config, nil
-}
-
-func getEnv(key, fallback string) string {
-	if value, ok := os.LookupEnv(key); ok {
-		return value
+	databaseURL := os.Getenv("DATABASE_URL")
+	if databaseURL == "" {
+		return nil, fmt.Errorf("DATABASE_URL is required. Did you forgot the create the .env stoopid?")
 	}
-	return fallback
+
+	jwtSecret := os.Getenv("JWT_SECRET")
+	if jwtSecret == "" {
+		return nil, fmt.Errorf("JWT_SECRET is required. Did you forgot the create the .env stoopid?")
+	}
+
+	serverPort := os.Getenv("SERVER_PORT")
+	if serverPort == "" {
+		return nil, fmt.Errorf("SERVER_PORT is required. Did you forgot the create the .env stoopid?")
+	}
+
+	return &Config{
+		DatabaseURL: databaseURL,
+		JWTSecret:   jwtSecret,
+		ServerPort:  serverPort,
+	}, nil
 }
