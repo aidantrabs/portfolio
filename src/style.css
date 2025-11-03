@@ -95,13 +95,18 @@
 
     .swiss-card {
         border: 3px solid currentColor;
-        transition: all 0.2s ease;
         box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
     }
 
-    .swiss-card:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+    @media (hover: hover) {
+        .swiss-card {
+            transition: all 0.2s ease;
+        }
+
+        .swiss-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+        }
     }
 
     .number-prefix {
