@@ -17,7 +17,6 @@
 }
 
 @layer components {
-    /* Neo-Brutalist Hero - Tech Background */
     .swiss-grid {
         position: relative;
         overflow: hidden;
@@ -36,46 +35,30 @@
         z-index: 0;
     }
 
-    /* Neo-Brutalist Accent Bar - Tech Oriented */
     .accent-bar {
         position: relative;
-        padding: 1rem;
-        padding-left: 1.25rem;
+        padding: 0.75rem 1rem;
         margin-top: 1rem;
         background: #ffffff;
-        border: 2px solid #000000;
-        border-left: 6px solid #ff0000;
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+        border: 3px solid #000000;
+        box-shadow: 8px 8px 0px #000000;
+        transform: rotate(1deg);
     }
 
     @media (min-width: 768px) {
         .accent-bar {
-            padding: 1.5rem;
-            padding-left: 2rem;
-            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15);
+            padding: 1rem 1.5rem;
         }
     }
 
-    .accent-bar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -8px;
-        width: 2px;
-        height: 100%;
-        background: #000000;
-    }
-
-    /* Asymmetric Grid */
     .asymmetric-layout {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 2rem;
     }
 
-    /* Typography Scale */
     .text-display {
-        font-size: clamp(3rem, 8vw, 8rem);
+        font-size: clamp(3.5rem, 8vw, 8rem);
         line-height: 0.9;
         letter-spacing: -0.02em;
         font-weight: 700;
@@ -88,7 +71,6 @@
         letter-spacing: -0.01em;
     }
 
-    /* Hover Effects - Simple */
     .swiss-link {
         position: relative;
         transition: color 0.2s ease;
@@ -111,7 +93,6 @@
         transform: scaleX(1);
     }
 
-    /* Card with border - Brutalist style */
     .swiss-card {
         border: 3px solid currentColor;
         transition: all 0.2s ease;
@@ -123,13 +104,11 @@
         box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
     }
 
-    /* Number prefix */
     .number-prefix {
         font-variant-numeric: tabular-nums;
         font-feature-settings: "tnum" 1;
     }
 
-    /* Neo-Brutalist Hero Elements - Tech Oriented */
     .hero-badge {
         position: relative;
         box-shadow: 8px 8px 0px #000000;
@@ -142,6 +121,7 @@
         position: relative;
         font-weight: 900;
         letter-spacing: -0.03em;
+        text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
 
     .hero-title::before {
@@ -172,7 +152,10 @@
         opacity: 0.4;
     }
 
-    /* Brutalist section styling */
+    nav a {
+        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
     section {
         position: relative;
     }
@@ -181,7 +164,6 @@
         text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
     }
 
-    /* Brutalist number prefix */
     .number-prefix {
         position: relative;
     }
@@ -197,7 +179,6 @@
         opacity: 0.2;
     }
 
-    /* Brutalist tags and buttons */
     .brutalist-tag {
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
         transition: all 0.15s ease;
@@ -208,15 +189,12 @@
         box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
     }
 
-    /* Brutalist skill icons */
     .skill-icon {
         text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
         display: inline-block;
     }
 
-    /* Contact section borders */
     .contact-border {
         border-top: 3px solid currentColor;
-        box-shadow: 0 3px 0 rgba(255, 255, 255, 0.1);
     }
 }

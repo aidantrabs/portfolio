@@ -1,9 +1,9 @@
 export default {
     hero: {
         badge: 'Aidan Traboulay',
-        title: 'Developer',
-        titleAccent: '& Monkey',
-        tagline: 'I like building things.',
+        title: 'Researcher',
+        titleAccent: '& Developer',
+        tagline: 'Proud contributor to technical debt worldwide.',
     },
     nav: {
         about: '01 — About',
@@ -38,7 +38,7 @@ export default {
         title: 'Selected Work',
         projects: [
             {
-                badge: 'Featured Project',
+                badge: 'Real-time Platform',
                 badgeColor: 'red',
                 title: 'Konfer Landing',
                 description:
@@ -51,8 +51,8 @@ export default {
                 theme: 'light',
             },
             {
-                badge: 'Development',
-                badgeColor: 'blue',
+                badge: 'Real-time Platform',
+                badgeColor: 'red',
                 title: 'SPUR Capital Landing',
                 description:
                     "SPUR Capital's landing page showcases our innovative investment platform designed for sophisticated investors seeking opportunities in the tech startup ecosystem. The site features a clean, professional design that highlights our investment thesis, portfolio companies, and track record of success. With an emphasis on transparency and data-driven decision making, the platform provides detailed insights into our investment strategy, deal flow, and due diligence process. Investors can easily access comprehensive information about our fund performance, investment criteria, and upcoming opportunities. The site also includes a secure portal for accredited investors to review confidential deal information and express interest in specific opportunities.",
@@ -64,7 +64,7 @@ export default {
                 theme: 'dark',
             },
             {
-                badge: 'Real-time Platform',
+                badge: 'Live MVP',
                 badgeColor: 'red',
                 title: 'SPUR Onboard',
                 description:

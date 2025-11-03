@@ -43,7 +43,6 @@ export function renderContent(content: Translation): void {
                     : 'bg-swiss-white text-swiss-black'
             }`;
 
-            // Determine badge color class
             const badgeColorClass =
                 project.badgeColor === 'red'
                     ? 'text-swiss-red'
@@ -51,28 +50,23 @@ export function renderContent(content: Translation): void {
                       ? 'text-swiss-accent'
                       : 'text-swiss-red';
 
-            // Determine text color for description
             const descriptionColorClass =
                 project.theme === 'dark' ? 'text-swiss-gray' : 'text-swiss-gray-dark';
 
-            // Determine border color for tags
             const tagBorderClass =
                 project.theme === 'dark' ? 'border-swiss-white' : 'border-swiss-black';
 
-            // Determine link color class
             const linkColorClass = project.theme === 'dark' ? 'text-swiss-white' : '';
 
-            // Determine button color class
             const buttonColorClass =
                 project.theme === 'dark'
                     ? 'text-swiss-white hover:text-swiss-red'
                     : 'text-swiss-black hover:text-swiss-red';
 
-            // Truncate description for mobile (150 characters)
             const maxLength = 150;
             const truncated =
                 project.description.length > maxLength
-                    ? project.description.substring(0, maxLength) + '...'
+                    ? `${project.description.substring(0, maxLength)}...`
                     : project.description;
             const needsTruncation = project.description.length > maxLength;
 
@@ -108,7 +102,6 @@ export function renderContent(content: Translation): void {
                                 }
                             </div>
                         </div>
-                        <!-- Tags - Desktop: show all -->
                         <div class="hidden md:flex flex-wrap gap-4 mb-6">
                             ${project.tags
                                 .map(
@@ -117,7 +110,6 @@ export function renderContent(content: Translation): void {
                                 )
                                 .join('')}
                         </div>
-                        <!-- Tags - Mobile: show max 3 initially -->
                         <div class="flex md:hidden flex-wrap gap-4 mb-6 tags-container-${index}">
                             ${project.tags
                                 .slice(0, 3)
@@ -144,7 +136,6 @@ export function renderContent(content: Translation): void {
 
             projectsContainer.appendChild(article);
 
-            // Add click handler for read more button if needed
             if (needsTruncation) {
                 const readMoreBtn = article.querySelector(`[data-project-index="${index}"]`);
                 const descriptionEl = article.querySelector(`.project-description-${index}`);
@@ -166,7 +157,6 @@ export function renderContent(content: Translation): void {
                 }
             }
 
-            // Add click handler for tags toggle button if needed
             if (project.tags.length > 3) {
                 const tagsContainer = article.querySelector(`.tags-container-${index}`);
 
@@ -179,7 +169,6 @@ export function renderContent(content: Translation): void {
                     const isExpanded = tagsToggleBtn.getAttribute('data-expanded') === 'true';
 
                     if (isExpanded) {
-                        // Show only first 3 tags
                         tagsContainer.innerHTML = `
                             ${project.tags
                                 .slice(0, 3)
@@ -191,11 +180,9 @@ export function renderContent(content: Translation): void {
                             <button class="px-4 py-2 border-2 ${tagBorderClass} text-sm font-bold uppercase opacity-50 hover:opacity-100 transition-opacity tags-toggle-${index} brutalist-tag" data-project-index="${index}">+${project.tags.length - 3}</button>
                         `;
 
-                        // Re-attach event listener
                         const newBtn = tagsContainer.querySelector(`.tags-toggle-${index}`);
                         newBtn?.addEventListener('click', handleTagsToggle);
                     } else {
-                        // Show all tags
                         tagsContainer.innerHTML = `
                             ${project.tags
                                 .map(
@@ -206,7 +193,6 @@ export function renderContent(content: Translation): void {
                             <button class="px-4 py-2 border-2 ${tagBorderClass} text-sm font-bold uppercase opacity-50 hover:opacity-100 transition-opacity tags-toggle-${index} brutalist-tag" data-project-index="${index}" data-expanded="true">Show less</button>
                         `;
 
-                        // Re-attach event listener
                         const newBtn = tagsContainer.querySelector(`.tags-toggle-${index}`);
                         newBtn?.addEventListener('click', handleTagsToggle);
                     }
@@ -223,7 +209,6 @@ export function renderContent(content: Translation): void {
     setTextContent('[data-i18n="skills.number"]', content.skills.number);
     setTextContent('[data-i18n="skills.title"]', content.skills.title);
 
-    // Skills - dynamically create all skill categories
     const skillsContainer = document.getElementById('skills-container');
     if (skillsContainer) {
         skillsContainer.innerHTML = '';
@@ -231,7 +216,6 @@ export function renderContent(content: Translation): void {
             const div = document.createElement('div');
             div.className = 'space-y-4';
 
-            // Determine icon color class
             const iconColorClass =
                 category.color === 'red'
                     ? 'text-swiss-red'
@@ -259,17 +243,14 @@ export function renderContent(content: Translation): void {
     setTextContent('[data-i18n="contact.title"]', content.contact.title);
     setTextContent('[data-i18n="contact.subtitle"]', content.contact.subtitle);
 
-    // Contact Links - dynamically create all contact link sections
     const contactLinksContainer = document.getElementById('contact-links-container');
     if (contactLinksContainer) {
         contactLinksContainer.innerHTML = '';
 
-        // Split links into two columns
         const midpoint = Math.ceil(content.contact.links.length / 2);
         const leftLinks = content.contact.links.slice(0, midpoint);
         const rightLinks = content.contact.links.slice(midpoint);
 
-        // Create left column
         const leftColumn = document.createElement('div');
         leftColumn.className = 'space-y-6';
         leftLinks.forEach((link) => {
@@ -287,7 +268,6 @@ export function renderContent(content: Translation): void {
         });
         contactLinksContainer.appendChild(leftColumn);
 
-        // Create right column
         const rightColumn = document.createElement('div');
         rightColumn.className = 'space-y-6';
         rightLinks.forEach((link) => {
@@ -314,12 +294,5 @@ function setTextContent(selector: string, text: string): void {
     const element = document.querySelector(selector);
     if (element) {
         element.textContent = text;
-    }
-}
-
-function setAttribute(selector: string, attribute: string, value: string): void {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.setAttribute(attribute, value);
     }
 }
