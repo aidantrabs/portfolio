@@ -5,6 +5,7 @@
 @layer base {
     html {
         scroll-behavior: smooth;
+        overscroll-behavior-y: none;
     }
 
     body {
@@ -13,6 +14,11 @@
             "liga" 1;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overscroll-behavior-y: none;
+    }
+
+    a, button {
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
