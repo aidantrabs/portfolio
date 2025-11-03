@@ -1,6 +1,7 @@
 import './style.css';
 import { initI18n, t } from './i18n';
 import { renderContent } from './render';
+import confetti from 'canvas-confetti';
 
 initI18n();
 renderContent(t());
@@ -64,8 +65,8 @@ window.addEventListener(
     { passive: true }
 );
 
-const keyBuffer: string[] = [];
-const SECRET_CODE = import.meta.env.VITE_SECRET_CODE.toLowerCase();
+const inputSequence: string[] = [];
+const UNLOCK_CODE = import.meta.env.VITE_SECRET_CODE.toLowerCase();
 
 function createHeart(): HTMLDivElement {
     const heart = document.createElement('div');
@@ -83,7 +84,65 @@ function createHeart(): HTMLDivElement {
     return heart;
 }
 
-function triggerHeartAnimation(): void {
+function showModal(): void {
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h1 class="modal-title">${import.meta.env.VITE_MODAL_MESSAGE}</h1>
+            <p class="modal-body">${import.meta.env.VITE_MODAL_BODY}</p>
+            <button class="modal-close">Close</button>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const frame = () => {
+        confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff']
+        });
+        confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff']
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    };
+    frame();
+
+    const closeBtn = modal.querySelector('.modal-close');
+    const closeModal = () => {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            document.body.removeChild(modal);
+        }, 300);
+    };
+
+    closeBtn?.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}
+
+function triggerSpecialAnimation(): void {
     const heartsCount = 30;
     const hearts: HTMLDivElement[] = [];
 
@@ -112,18 +171,22 @@ function triggerHeartAnimation(): void {
             }, 3000);
         }, i * 100);
     }
+
+    setTimeout(() => {
+        showModal();
+    }, 500);
 }
 
 window.addEventListener('keydown', (e) => {
-    keyBuffer.push(e.key.toLowerCase());
+    inputSequence.push(e.key.toLowerCase());
 
-    if (keyBuffer.length > SECRET_CODE.length) {
-        keyBuffer.shift();
+    if (inputSequence.length > UNLOCK_CODE.length) {
+        inputSequence.shift();
     }
 
-    if (keyBuffer.join('') === SECRET_CODE) {
-        triggerHeartAnimation();
-        keyBuffer.length = 0;
+    if (inputSequence.join('') === UNLOCK_CODE) {
+        triggerSpecialAnimation();
+        inputSequence.length = 0;
     }
 });
 
