@@ -17,7 +17,8 @@
         overscroll-behavior-y: none;
     }
 
-    a, button {
+    a,
+    button {
         -webkit-tap-highlight-color: transparent;
     }
 }

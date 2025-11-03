@@ -1,7 +1,7 @@
 import './style.css';
+import confetti from 'canvas-confetti';
 import { initI18n, t } from './i18n';
 import { renderContent } from './render';
-import confetti from 'canvas-confetti';
 
 initI18n();
 renderContent(t());
@@ -110,14 +110,14 @@ function showModal(): void {
             angle: 60,
             spread: 55,
             origin: { x: 0 },
-            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff']
+            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff'],
         });
         confetti({
             particleCount: 3,
             angle: 120,
             spread: 55,
             origin: { x: 1 },
-            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff']
+            colors: ['#ff0000', '#000000', '#ffff00', '#ffffff'],
         });
 
         if (Date.now() < end) {
