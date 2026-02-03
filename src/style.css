@@ -1,276 +1,144 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Instrument Sans", system-ui, sans-serif;
+    --font-caveat: "Caveat", cursive;
+}
 
 @layer base {
     html {
-        scroll-behavior: smooth;
-        overscroll-behavior-y: none;
-    }
-
-    body {
-        font-feature-settings:
-            "kern" 1,
-            "liga" 1;
+        font-family: var(--font-sans);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overscroll-behavior-y: none;
+        scroll-behavior: smooth;
     }
 
-    a,
-    button {
-        -webkit-tap-highlight-color: transparent;
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 }
 
-@layer components {
-    .swiss-grid {
-        position: relative;
-        overflow: hidden;
-        background: #fafafa;
+/* Caveat font class */
+.font-caveat {
+    font-family: var(--font-caveat);
+}
+
+/* Noise texture overlay */
+.noise {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+}
+
+.link-hover {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.link-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.2s ease;
+}
+
+.link-hover:hover::after {
+    width: 100%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(-3deg) translateY(0);
     }
-
-    .swiss-grid::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(0deg, transparent 95%, rgba(0, 0, 0, 0.03) 95%),
-            linear-gradient(90deg, transparent 95%, rgba(0, 0, 0, 0.03) 95%);
-        background-size: 100px 100px;
-        pointer-events: none;
-        z-index: 0;
+    50% {
+        transform: translate(-50%, -50%) rotate(-3deg) translateY(-8px);
     }
+}
 
-    .accent-bar {
-        position: relative;
-        padding: 0.75rem 1rem;
-        margin-top: 1rem;
-        background: #ffffff;
-        border: 3px solid #000000;
-        box-shadow: 8px 8px 0px #000000;
-        transform: rotate(1deg);
-    }
+.animate-float {
+    animation: float 7s ease-in-out infinite;
+}
 
-    @media (min-width: 768px) {
-        .accent-bar {
-            padding: 1rem 1.5rem;
-        }
-    }
-
-    .asymmetric-layout {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 2rem;
-    }
-
-    .text-display {
-        font-size: clamp(3.5rem, 8vw, 8rem);
-        line-height: 0.9;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-    }
-
-    .text-headline {
-        font-size: clamp(2rem, 5vw, 4rem);
-        line-height: 1;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-    }
-
-    .swiss-link {
-        position: relative;
-        transition: color 0.2s ease;
-    }
-
-    .swiss-link::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: currentColor;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-    }
-
-    .swiss-link:hover::after {
-        transform: scaleX(1);
-    }
-
-    .swiss-card {
-        border: 3px solid currentColor;
-        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (hover: hover) {
-        .swiss-card {
-            transition: all 0.2s ease;
-        }
-
-        .swiss-card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
-        }
-    }
-
-    .number-prefix {
-        font-variant-numeric: tabular-nums;
-        font-feature-settings: "tnum" 1;
-    }
-
-    .hero-badge {
-        position: relative;
-        box-shadow: 8px 8px 0px #000000;
-        background: #ffffff;
-        border: 3px solid #000000;
-        transform: rotate(-1deg);
-    }
-
-    .hero-title {
-        position: relative;
-        font-weight: 900;
-        letter-spacing: -0.03em;
-        text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero-title::before {
-        content: "";
-        position: absolute;
-        width: 4px;
-        height: 100%;
-        background: #ff0000;
-        top: 0;
-        left: -20px;
-        z-index: -1;
-    }
-
-    .hero-title span:first-child {
-        position: relative;
-        display: inline-block;
-    }
-
-    .hero-title span:first-child::after {
-        content: "";
-        position: absolute;
-        bottom: 10px;
-        left: -10px;
-        width: calc(100% + 20px);
-        height: 30%;
-        background: #ffff00;
-        z-index: -1;
+@keyframes bounce-fade {
+    0%, 100% {
         opacity: 0.4;
+        transform: translateX(-50%) translateY(0);
     }
-
-    nav a {
-        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    section {
-        position: relative;
-    }
-
-    section h2 {
-        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .number-prefix {
-        position: relative;
-    }
-
-    .number-prefix::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 80%;
-        height: 4px;
-        background: currentColor;
-        opacity: 0.2;
-    }
-
-    .brutalist-tag {
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
-        transition: all 0.15s ease;
-    }
-
-    .brutalist-tag:hover {
-        transform: translate(-1px, -1px);
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-    }
-
-    .skill-icon {
-        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
-        display: inline-block;
-    }
-
-    .contact-border {
-        border-top: 3px solid currentColor;
-    }
-
-    /* Modal overlay */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    .modal-overlay.active {
+    50% {
         opacity: 1;
-        pointer-events: auto;
+        transform: translateX(-50%) translateY(6px);
     }
+}
 
-    .modal-content {
-        background: #ffffff;
-        border: 4px solid #000000;
-        box-shadow: 12px 12px 0px #000000;
-        padding: 3rem;
-        text-align: center;
-        transform: rotate(-2deg) scale(0.8);
-        transition: transform 0.3s ease;
-    }
+.animate-scroll-hint {
+    animation: bounce-fade 2s ease-in-out infinite;
+}
 
-    .modal-overlay.active .modal-content {
-        transform: rotate(-2deg) scale(1);
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    .modal-title {
-        font-size: clamp(2rem, 8vw, 4rem);
-        font-weight: 900;
-        color: #000000;
-        text-shadow: 4px 4px 0px rgba(255, 0, 0, 0.3);
-        margin: 0;
-        letter-spacing: -0.02em;
-    }
+.animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
 
-    .modal-close {
-        margin-top: 2rem;
-        padding: 1rem 2rem;
-        background: #000000;
-        color: #ffffff;
-        border: none;
-        font-weight: 900;
-        text-transform: uppercase;
-        cursor: pointer;
-        font-size: 1rem;
-        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
-        transition: transform 0.2s ease;
-    }
+.animate-fade-in-up.is-visible {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
 
-    .modal-close:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+.animate-fade-in-up.animation-delay-200.is-visible {
+    animation-delay: 0.2s;
+}
+
+.animate-fade-in-up.animation-delay-400.is-visible {
+    animation-delay: 0.4s;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+.about-statement {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.3;
+}
+
+.label-with-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.label-with-line::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #d1d1d1;
+    max-width: 100px;
 }
