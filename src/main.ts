@@ -57,7 +57,7 @@ document.querySelectorAll<HTMLAnchorElement>('[data-scroll-to]').forEach((link) 
 
 const observerOptions: IntersectionObserverInit = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
 };
 
 const observer = new IntersectionObserver((entries) => {
