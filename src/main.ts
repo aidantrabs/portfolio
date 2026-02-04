@@ -1,5 +1,9 @@
 import './style.css';
 
+document.querySelectorAll('.js-year').forEach((el) => {
+    el.textContent = new Date().getFullYear().toString();
+});
+
 document.querySelectorAll<HTMLAnchorElement>('[data-scroll-to]').forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
