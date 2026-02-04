@@ -33,3 +33,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
     observer.observe(el);
 });
+
+document.fonts.ready.then(() => {
+    document.body.classList.add('loaded');
+});
