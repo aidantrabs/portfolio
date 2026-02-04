@@ -7,18 +7,31 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Sedgwick+Ave+Display&display=swap"
+            rel="stylesheet"
+        >
         <title>Aidan Traboulay</title>
         <style>
-            body { opacity: 0; }
-            body.loaded { opacity: 1; transition: opacity 0.3s ease; }
+        body {
+            opacity: 0;
+        }
+        body.loaded {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
         </style>
     </head>
 
     <body>
         <svg class="noise" aria-hidden="true">
             <filter id="grain">
-                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+                <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.65"
+                    numOctaves="3"
+                    stitchTiles="stitch"
+                />
                 <feColorMatrix type="saturate" values="0"/>
             </filter>
             <rect width="100%" height="100%" filter="url(#grain)"/>
@@ -30,22 +43,33 @@
         </button>
 
         <section class="relative h-screen p-6 md:p-10 lg:p-12">
-            <nav class="absolute top-6 right-12 md:top-10 md:right-16 lg:top-12 lg:right-20 flex gap-6 md:gap-8">
-                <a href="#" data-scroll-to="about" class="link-hover text-[11px] font-medium uppercase tracking-[0.2em] text-muted hover:text-theme">
+            <nav
+                class="absolute top-6 right-12 md:top-10 md:right-16 lg:top-12 lg:right-20 flex gap-6 md:gap-8"
+            >
+                <a
+                    href="#"
+                    data-scroll-to="about"
+                    class="link-hover text-[11px] font-medium uppercase tracking-[0.2em] text-muted hover:text-theme"
+                >
                     About
                 </a>
-                <a href="https://github.com/aidantrabs" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.2em] text-muted hover:text-theme">
+                <a
+                    href="https://github.com/aidantrabs"
+                    target="_blank"
+                    rel="noopener"
+                    class="link-hover text-[11px] font-medium uppercase tracking-[0.2em] text-muted hover:text-theme"
+                >
                     Projects
                 </a>
             </nav>
 
-            <div class="graffiti-bg" aria-hidden="true">
-                aidan
-            </div>
+            <div class="graffiti-bg" aria-hidden="true">aidan</div>
 
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <h1 class="graffiti-name text-accent">
-                    aidan<br>traboulay
+                    aidan
+                    <br>
+                    traboulay
                 </h1>
             </div>
 
@@ -54,16 +78,29 @@
                     <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted mb-1">
                         Say Hello
                     </p>
-                    <a href="mailto:aidantraboulay@protonmail.com" class="link-hover text-[11px] font-medium hover:text-accent">
+                    <a
+                        href="mailto:aidantraboulay@protonmail.com"
+                        class="link-hover text-[11px] font-medium hover:text-accent"
+                    >
                         aidantraboulay@protonmail.com
                     </a>
                 </div>
 
                 <div class="flex gap-4">
-                    <a href="https://github.com/aidantrabs" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                    <a
+                        href="https://github.com/aidantrabs"
+                        target="_blank"
+                        rel="noopener"
+                        class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                    >
                         GitHub
                     </a>
-                    <a href="https://linkedin.com/in/aidan-traboulay" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                    <a
+                        href="https://linkedin.com/in/aidan-traboulay"
+                        target="_blank"
+                        rel="noopener"
+                        class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                    >
                         LinkedIn
                     </a>
                 </div>
@@ -73,38 +110,60 @@
                 <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted mb-1">
                     Say Hello
                 </p>
-                <a href="mailto:aidantraboulay@protonmail.com" class="link-hover text-[11px] font-medium hover:text-accent">
+                <a
+                    href="mailto:aidantraboulay@protonmail.com"
+                    class="link-hover text-[11px] font-medium hover:text-accent"
+                >
                     aidantraboulay@protonmail.com
                 </a>
             </div>
 
             <div class="absolute bottom-10 right-10 lg:bottom-12 lg:right-12 hidden md:flex gap-6">
-                <a href="https://github.com/aidantrabs" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                <a
+                    href="https://github.com/aidantrabs"
+                    target="_blank"
+                    rel="noopener"
+                    class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                >
                     GitHub
                 </a>
-                <a href="https://linkedin.com/in/aidan-traboulay" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                <a
+                    href="https://linkedin.com/in/aidan-traboulay"
+                    target="_blank"
+                    rel="noopener"
+                    class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                >
                     LinkedIn
                 </a>
             </div>
 
-            <div class="absolute top-6 left-6 md:top-10 md:left-10 lg:top-12 lg:left-12 hidden md:block">
+            <div
+                class="absolute top-6 left-6 md:top-10 md:left-10 lg:top-12 lg:left-12 hidden md:block"
+            >
                 <p class="text-[9px] font-medium uppercase tracking-[0.2em] text-muted">
-                    <span class="text-accent">~7kb</span> gzip
+                    <span class="text-accent">~7kb</span>gzip
                 </p>
                 <p class="text-[9px] font-medium uppercase tracking-[0.2em] text-muted mt-1">
-                    Vercel <span class="text-accent">/</span> iad1
+                    Vercel <span class="text-accent">/</span>iad1
                 </p>
             </div>
 
             <div class="absolute bottom-10 left-1/2 animate-scroll-hint hidden md:block">
-                <span class="text-[9px] font-medium uppercase tracking-[0.3em] text-muted">Scroll</span>
+                <span class="text-[9px] font-medium uppercase tracking-[0.3em] text-muted"
+                    >Scroll</span
+                >
             </div>
         </section>
 
-        <section id="about" class="min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-12 py-20 md:py-32">
+        <section
+            id="about"
+            class="min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-12 py-20 md:py-32"
+        >
             <div class="max-w-[900px]">
                 <div class="label-with-line mb-8 md:mb-12 animate-fade-in-up">
-                    <span class="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted">About /</span>
+                    <span class="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted"
+                        >About /</span
+                    >
                 </div>
 
                 <p class="about-statement font-medium animate-fade-in-up animation-delay-200">
@@ -113,60 +172,134 @@
                     and shipping systems that perform under real world conditions.
                 </p>
 
-                <p class="mt-8 md:mt-12 text-[14px] md:text-[16px] text-muted max-w-[600px] leading-relaxed animate-fade-in-up animation-delay-400">
-                    authorized to work in trinidad and tobago, canada, and the united states, i combine
-                    devops and sre practices with project leadership - translating requirements into
-                    scalable systems and guiding delivery from architecture to production.
+                <p
+                    class="mt-8 md:mt-12 text-[14px] md:text-[16px] text-muted max-w-[600px] leading-relaxed animate-fade-in-up animation-delay-400"
+                >
+                    authorized to work in trinidad and tobago, canada, and the united states, i
+                    combine devops and sre practices with project leadership - translating
+                    requirements into scalable systems and guiding delivery from architecture to
+                    production.
                 </p>
             </div>
         </section>
 
         <section class="border-y border-accent/20 py-6 md:py-8 overflow-hidden">
             <div class="flex animate-marquee whitespace-nowrap">
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
-                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">Let's Talk <span class="text-accent">/</span></span>
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
+                <span
+                    class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8"
+                    >Let's Talk <span class="text-accent">/</span></span
+                >
             </div>
         </section>
 
         <footer class="px-6 md:px-10 lg:px-12 py-12 md:py-16 lg:py-20">
-            <div class="relative flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left gap-8">
+            <div
+                class="relative flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left gap-8"
+            >
                 <div>
-                    <p class="text-[13px] font-semibold uppercase tracking-[0.15em]">&copy; Aidan Traboulay</p>
-                    <p class="text-[11px] font-medium uppercase tracking-[0.15em] text-muted mt-1 js-year"></p>
+                    <p class="text-[13px] font-semibold uppercase tracking-[0.15em]">
+                        &copy; Aidan Traboulay
+                    </p>
+                    <p
+                        class="text-[11px] font-medium uppercase tracking-[0.15em] text-muted mt-1 js-year"
+                    ></p>
                 </div>
 
-                <p class="hidden lg:block text-[9px] font-medium uppercase tracking-[0.2em] text-muted absolute left-1/2 -translate-x-1/2 bottom-0">
+                <p
+                    class="hidden lg:block text-[9px] font-medium uppercase tracking-[0.2em] text-muted absolute left-1/2 -translate-x-1/2 bottom-0"
+                >
                     proud contributer to technical debt worldwide
                 </p>
 
                 <div class="flex gap-6">
-                    <a href="mailto:aidantraboulay@protonmail.com" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                    <a
+                        href="mailto:aidantraboulay@protonmail.com"
+                        class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                    >
                         Email
                     </a>
-                    <a href="https://github.com/aidantrabs" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                    <a
+                        href="https://github.com/aidantrabs"
+                        target="_blank"
+                        rel="noopener"
+                        class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                    >
                         GitHub
                     </a>
-                    <a href="https://linkedin.com/in/aidan-traboulay" target="_blank" rel="noopener" class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme">
+                    <a
+                        href="https://linkedin.com/in/aidan-traboulay"
+                        target="_blank"
+                        rel="noopener"
+                        class="link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme"
+                    >
                         LinkedIn
                     </a>
                 </div>
             </div>
 
-            <p class="lg:hidden text-[9px] font-medium uppercase tracking-[0.2em] text-muted mt-8 text-center">
+            <p
+                class="lg:hidden text-[9px] font-medium uppercase tracking-[0.2em] text-muted mt-8 text-center"
+            >
                 proud contributer to technical debt worldwide
             </p>
         </footer>
