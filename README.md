@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/banner.svg" alt="aidan traboulay" width="500">
+  <img src="public/banner.png" alt="aidan traboulay" width="400">
 </p>
 
 <p align="center">
