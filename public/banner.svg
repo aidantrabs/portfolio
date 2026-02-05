@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display');
+  </style>
+  <text
+    x="300"
+    y="100"
+    font-family="'Sedgwick Ave Display', cursive"
+    font-size="72"
+    text-anchor="middle"
+    fill="#FF6663"
+    transform="rotate(-4, 300, 75)"
+  >aidan traboulay</text>
+</svg>
