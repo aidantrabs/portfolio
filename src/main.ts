@@ -43,6 +43,9 @@ document.querySelectorAll('.js-year').forEach((el) => {
     el.textContent = new Date().getFullYear().toString();
 });
 
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+const scrollBehavior = isMobile ? 'auto' : 'smooth';
+
 document.querySelectorAll<HTMLAnchorElement>('[data-scroll-to]').forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -50,7 +53,7 @@ document.querySelectorAll<HTMLAnchorElement>('[data-scroll-to]').forEach((link) 
 
         if (targetId) {
             const target = document.getElementById(targetId);
-            target?.scrollIntoView({ behavior: 'smooth' });
+            target?.scrollIntoView({ behavior: scrollBehavior });
         }
     });
 });
