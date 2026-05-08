@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
@@ -60,7 +61,8 @@ function buildSize() {
 }
 
 export default defineConfig({
-    integrations: [buildSize()],
+    site: 'https://aidantraboulay.dev',
+    integrations: [sitemap(), buildSize()],
     vite: {
         plugins: [tailwindcss()],
     },

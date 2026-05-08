@@ -1,13 +1,16 @@
 ---
 import '../style.css';
+import Seo from '../components/Seo.astro';
 
 interface Props {
-    title?: string;
-    description?: string;
+    title?: string | undefined;
+    description?: string | undefined;
+    image?: string | undefined;
+    type?: 'website' | 'article' | 'profile' | undefined;
+    noindex?: boolean | undefined;
 }
 
-const { title = 'Aidan Traboulay', description = 'Aidan Traboulay - Designer & Developer' } =
-    Astro.props;
+const { title, description, image, type, noindex } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,15 +18,19 @@ const { title = 'Aidan Traboulay', description = 'Aidan Traboulay - Designer & D
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={description} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <Seo
+            title={title}
+            description={description}
+            image={image}
+            type={type}
+            noindex={noindex}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Sedgwick+Ave+Display&display=swap"
             rel="stylesheet"
         />
-        <title>{title}</title>
         <style is:inline>
             body {
                 opacity: 0;

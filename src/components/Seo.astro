@@ -1,0 +1,103 @@
+---
+interface Props {
+    title?: string | undefined;
+    description?: string | undefined;
+    image?: string | undefined;
+    type?: 'website' | 'article' | 'profile' | undefined;
+    noindex?: boolean | undefined;
+}
+
+const SITE_NAME = 'Aidan Traboulay';
+const SITE_HANDLE = '@aidantrabs';
+const DEFAULT_TITLE = 'Aidan Traboulay';
+const DEFAULT_DESCRIPTION =
+    'Aidan Traboulay - software engineer building reliable, scalable infrastructure.';
+const DEFAULT_IMAGE = '/og.png';
+
+const {
+    title = DEFAULT_TITLE,
+    description = DEFAULT_DESCRIPTION,
+    image = DEFAULT_IMAGE,
+    type = 'website',
+    noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+
+const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Aidan Traboulay',
+    url: Astro.site?.href ?? canonical,
+    email: 'mailto:aidantraboulay@protonmail.com',
+    jobTitle: 'Software Engineer',
+    sameAs: [
+        'https://github.com/aidantrabs',
+        'https://linkedin.com/in/aidan-traboulay',
+        'https://blog.aidantraboulay.dev',
+    ],
+    description: DEFAULT_DESCRIPTION,
+};
+
+const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: Astro.site?.href ?? canonical,
+    inLanguage: 'en',
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta name="theme-color" content="#ff6663" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#141211" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+{
+    !noindex && (
+        <meta
+            name="robots"
+            content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+        />
+    )
+}
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content={SITE_NAME} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:creator" content={SITE_HANDLE} />
+<meta name="twitter:site" content={SITE_HANDLE} />
+
+<meta name="author" content="Aidan Traboulay" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title="Aidan's Blog" href="https://blog.aidantraboulay.dev/feed.xml" />
+
+<script
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+    is:inline
+/>
+<script
+    type="application/ld+json"
+    set:html={JSON.stringify(websiteSchema)}
+    is:inline
+/>
