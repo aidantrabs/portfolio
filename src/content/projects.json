@@ -1,0 +1,50 @@
+[
+    {
+        "title": "pipeline sentinel",
+        "year": 2025,
+        "role": "infra / observability",
+        "description": "lineage-aware monitoring for ETL pipelines. detects schema drift and surfaces blast-radius before deploys.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "data"
+    },
+    {
+        "title": "terraform stack",
+        "year": 2025,
+        "role": "platform / iac",
+        "description": "opinionated module set for multi-region postgres, redis, and edge workers. one-command bootstrap.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "tools"
+    },
+    {
+        "title": "edge cache",
+        "year": 2024,
+        "role": "performance / cdn",
+        "description": "selective cache invalidation across cloudflare workers. surrogate keys, tag-based purge, sub-100ms p99.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "web"
+    },
+    {
+        "title": "deploy cli",
+        "year": 2024,
+        "role": "developer tooling",
+        "description": "internal release tool with safe-rollback, canary stages, and slack-integrated approvals.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "cli"
+    },
+    {
+        "title": "latency lab",
+        "year": 2024,
+        "role": "chaos / sre",
+        "description": "controlled fault injection for staging environments. network partitions, slow disks, clock skew.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "experiment"
+    },
+    {
+        "title": "rack runner",
+        "year": 2023,
+        "role": "infra / orchestration",
+        "description": "self-healing job runner for batch workloads. surfaces stuck shards before they page anyone.",
+        "url": "https://github.com/aidantrabs",
+        "glyph": "server"
+    }
+]

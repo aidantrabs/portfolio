@@ -1,0 +1,30 @@
+---
+import ProjectGlyph from './illustrations/ProjectGlyph.astro';
+
+type GlyphVariant = 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
+
+interface Props {
+    title: string;
+    year: number;
+    role: string;
+    description: string;
+    url: string;
+    glyph: GlyphVariant;
+}
+
+const { title, year, role, description, url, glyph } = Astro.props;
+---
+
+<a href={url} class="project-card" target="_blank" rel="noopener">
+    <div class="project-card__glyph-wrap">
+        <ProjectGlyph variant={glyph} />
+    </div>
+    <div class="project-card__meta">
+        <span class="project-card__year">{year}</span>
+        <span class="project-card__sep">/</span>
+        <span class="project-card__role">{role}</span>
+    </div>
+    <h3 class="project-card__title">{title}</h3>
+    <p class="project-card__desc">{description}</p>
+    <span class="project-card__arrow" aria-hidden="true">↗</span>
+</a>

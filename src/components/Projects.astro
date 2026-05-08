@@ -1,0 +1,43 @@
+---
+import projects from '../content/projects.json';
+import ProjectCard from './ProjectCard.astro';
+import CircuitDoodle from './illustrations/CircuitDoodle.astro';
+
+type GlyphVariant = 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
+
+const items = projects as Array<{
+    title: string;
+    year: number;
+    role: string;
+    description: string;
+    url: string;
+    glyph: GlyphVariant;
+}>;
+---
+
+<section id="work" class="section section--projects">
+    <div class="section__divider" aria-hidden="true">
+        <CircuitDoodle />
+    </div>
+
+    <div class="section__header">
+        <div class="section__heading">
+            <span class="section__num">02</span>
+            <h2 class="section__title">selected work</h2>
+        </div>
+        <span class="section__count">
+            {items.length}
+            <span class="section__count-label">projects</span>
+        </span>
+    </div>
+
+    <ul class="projects-grid">
+        {
+            items.map((project) => (
+                <li class="projects-grid__item animate-fade-in-up">
+                    <ProjectCard {...project} />
+                </li>
+            ))
+        }
+    </ul>
+</section>
