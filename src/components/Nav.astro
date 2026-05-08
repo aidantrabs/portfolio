@@ -1,0 +1,34 @@
+---
+const NAV_ITEMS = [
+    { num: '01', label: 'about', target: 'about' },
+    { num: '02', label: 'work', target: 'work' },
+    { num: '03', label: 'skills', target: 'skills' },
+    { num: '04', label: 'writing', target: 'writing' },
+    { num: '05', label: 'contact', target: 'contact' },
+];
+---
+
+<nav class="site-nav" aria-label="Primary">
+    <a href="#" class="site-nav__brand" data-scroll-to="top" aria-label="Top">
+        <span class="site-nav__brand-mark">aidan</span>
+        <span class="site-nav__brand-slash">/</span>
+        <span class="site-nav__brand-tag">at</span>
+    </a>
+
+    <ul class="site-nav__list">
+        {
+            NAV_ITEMS.map((item) => (
+                <li class="site-nav__item">
+                    <a
+                        href={`#${item.target}`}
+                        data-scroll-to={item.target}
+                        class="site-nav__link"
+                    >
+                        <span class="site-nav__num">{item.num}</span>
+                        <span class="site-nav__label">{item.label}</span>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
