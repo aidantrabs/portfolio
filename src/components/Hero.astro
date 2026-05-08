@@ -1,20 +1,66 @@
 ---
-import VhsAccent from './VhsAccent.astro';
+import HankoMark from './HankoMark.astro';
 ---
 
 <section id="top" class="hero">
-    <div class="hero__center">
-        <h1 class="graffiti-name text-accent">
-            aidan
+    <div class="hero__plate" data-hero-plate>
+        <span class="hero__plate-tick hero__plate-tick--tl" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none">
+                <path d="M0 1 H10 M1 0 V10" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </span>
+        <span class="hero__plate-tick hero__plate-tick--tr" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none">
+                <path d="M0 1 H10 M1 0 V10" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </span>
+        <span class="hero__plate-tick hero__plate-tick--bl" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none">
+                <path d="M0 1 H10 M1 0 V10" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </span>
+        <span class="hero__plate-tick hero__plate-tick--br" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none">
+                <path d="M0 1 H10 M1 0 V10" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </span>
+
+        <div class="hero__hanko" data-hero-hanko>
+            <HankoMark label="AT" size={64} />
+        </div>
+
+        <span class="hero__eyebrow" data-hero-eyebrow>
+            <span class="hero__eyebrow-rule" aria-hidden="true"></span>
+            <span>portfolio / no.26</span>
+        </span>
+
+        <h1 class="hero__name" data-hero-name>
+            <span class="hero__name-shadow" data-hero-shadow aria-hidden="true">
+                <span class="split-word">aidan</span>
+                <br />
+                <span class="split-word">traboulay</span>
+            </span>
+            <span class="split-word">aidan</span>
             <br />
-            traboulay
+            <span class="split-word">traboulay</span>
         </h1>
-        <p class="hero__tag">software engineer / building infrastructure</p>
+
+        <p class="hero__tag" data-hero-tag>
+            <span>software engineer</span>
+            <span class="hero__tag-dot" aria-hidden="true"></span>
+            <span>building infrastructure</span>
+            <span class="hero__tag-dot" aria-hidden="true"></span>
+            <span>shipping since 2019</span>
+        </p>
     </div>
 
-    <VhsAccent />
-
-    <a href="#about" data-scroll-to="about" class="hero__scroll" aria-label="Scroll to about">
+    <a
+        href="#about"
+        data-scroll-to="about"
+        class="hero__scroll"
+        aria-label="Scroll to about"
+        data-hero-scroll
+    >
         <span>scroll</span>
         <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
     </a>
