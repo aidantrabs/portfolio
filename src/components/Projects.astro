@@ -1,8 +1,9 @@
 ---
 import projects from '../content/projects.json';
 import studios from '../content/studios.json';
-import ProjectRow from './ProjectRow.astro';
-import StudioCard from './StudioCard.astro';
+import WorkRow from './WorkRow.astro';
+
+type Glyph = 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
 
 const personalItems = projects as Array<{
     title: string;
@@ -10,24 +11,41 @@ const personalItems = projects as Array<{
     role: string;
     description: string;
     url: string;
-    glyph: string;
+    glyph: Glyph;
 }>;
 
 const studioItems = studios as Array<{
     title: string;
-    tagline: string;
-    description: string;
+    tags: string[];
+    glyph: Glyph;
     url: string;
 }>;
+
+function tagsFromRole(role: string): string[] {
+    return role
+        .split('/')
+        .map((s) => s.trim())
+        .filter(Boolean);
+}
+
+function handleFromUrl(url: string): string {
+    try {
+        const parsed = new URL(url);
+        if (parsed.hostname.includes('github.com')) {
+            const seg = parsed.pathname.split('/').filter(Boolean)[0];
+            if (seg) return `@${seg}`;
+        }
+    } catch {
+        // ignore
+    }
+    return '';
+}
 ---
 
 <section id="work" class="section section--projects">
     <div class="section__header">
         <h2 class="section__title" data-section-title>work</h2>
-        <span class="section__count">
-            {personalItems.length + studioItems.length}
-            <span class="section__count-label">selected</span>
-        </span>
+        <span class="section__count">(pickup works)</span>
     </div>
 
     <div class="work-group">
@@ -35,14 +53,15 @@ const studioItems = studios as Array<{
             <span>studios</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
         </div>
-        <ul class="studios-grid">
+        <ul class="work-list">
             {
                 studioItems.map((studio) => (
-                    <StudioCard
+                    <WorkRow
                         title={studio.title}
-                        tagline={studio.tagline}
-                        description={studio.description}
+                        tags={studio.tags}
+                        glyph={studio.glyph}
                         url={studio.url}
+                        handle={handleFromUrl(studio.url)}
                     />
                 ))
             }
@@ -54,18 +73,17 @@ const studioItems = studios as Array<{
             <span>personal projects</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
         </div>
-        <ol class="projects-list">
+        <ul class="work-list">
             {
                 personalItems.map((project) => (
-                    <ProjectRow
+                    <WorkRow
                         title={project.title}
-                        year={project.year}
-                        role={project.role}
-                        description={project.description}
+                        tags={tagsFromRole(project.role)}
+                        glyph={project.glyph}
                         url={project.url}
                     />
                 ))
             }
-        </ol>
+        </ul>
     </div>
 </section>

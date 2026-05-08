@@ -1,0 +1,27 @@
+---
+import ProjectGlyph from './illustrations/ProjectGlyph.astro';
+
+interface Props {
+    title: string;
+    tags: string[];
+    glyph: 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
+    url: string;
+    handle?: string | undefined;
+}
+
+const { title, tags, glyph, url, handle } = Astro.props;
+---
+
+<li class="work-row">
+    <a href={url} target="_blank" rel="noopener" class="work-row__link">
+        <span class="work-row__bar" aria-hidden="true"></span>
+        <h3 class="work-row__title">{title}{handle && <span class="work-row__handle"> {handle}</span>}</h3>
+        <div class="work-row__tags">
+            {tags.map((tag) => <span class="pill-tag">{tag}</span>)}
+        </div>
+        <div class="work-row__thumb">
+            <ProjectGlyph variant={glyph} class="work-row__thumb-glyph" />
+        </div>
+        <span class="work-row__arrow" aria-hidden="true">→</span>
+    </a>
+</li>

@@ -1,14 +1,14 @@
 [
     {
         "title": "iterwise",
-        "tagline": "consultancy & product studio",
-        "description": "infrastructure, internal platforms, and developer tooling for early-stage teams.",
+        "tags": ["consultancy", "product studio"],
+        "glyph": "tools",
         "url": "https://github.com/iterwise"
     },
     {
         "title": "riddim technologies",
-        "tagline": "consultancy & product studio",
-        "description": "infrastructure and full-stack delivery for studios, labels, and culture-led brands.",
+        "tags": ["consultancy", "product studio"],
+        "glyph": "experiment",
         "url": "https://github.com/riddim-technologies"
     }
 ]
