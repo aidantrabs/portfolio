@@ -38,8 +38,10 @@ const { title, description, image, type, noindex } = Astro.props;
     <body>
         <LoadingIndicator />
         <IllustrationDefs />
-        <AppShell />
-        <slot />
+        <main class="app-bounds">
+            <AppShell />
+            <slot />
+        </main>
         <script>
             import '../lib/loading';
             import '../lib/theme';
