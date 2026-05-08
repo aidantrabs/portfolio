@@ -409,6 +409,27 @@
     overflow: visible;
 }
 
+.hero-scene-wrap {
+    position: absolute;
+    right: -3%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-4deg);
+    width: clamp(180px, 22vw, 320px);
+    pointer-events: none;
+    opacity: 0.95;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-scene-wrap {
+        right: -8%;
+        top: 12%;
+        transform: translateY(0) rotate(-6deg);
+        width: 140px;
+        opacity: 0.7;
+    }
+}
+
 .illustration-stroke {
     fill: none;
     stroke: currentColor;

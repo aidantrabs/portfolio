@@ -1,0 +1,169 @@
+---
+interface Props {
+    class?: string | undefined;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+    class:list={['illustration', 'hero-scene', className]}
+    viewBox="0 0 280 360"
+    aria-hidden="true"
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g class="hero-scene__circuit">
+        <path
+            d="M20 40 L20 90 L60 90 L60 130 M40 80 L20 80"
+            class="illustration-stroke"
+            stroke-width="1.5"
+            stroke-dasharray="0"
+            opacity="0.55"
+        ></path>
+        <path
+            d="M260 60 L240 60 L240 110 L210 110 L210 150 L195 165"
+            class="illustration-stroke"
+            stroke-width="1.5"
+            opacity="0.55"
+        ></path>
+        <path
+            d="M30 320 L30 290 L80 290 L80 270"
+            class="illustration-stroke"
+            stroke-width="1.5"
+            opacity="0.55"
+        ></path>
+        <circle cx="20" cy="40" r="3" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="40" cy="80" r="2.5" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="60" cy="130" r="3" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="260" cy="60" r="3" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="195" cy="165" r="2.5" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="80" cy="270" r="3" fill="currentColor" opacity="0.7"></circle>
+        <circle cx="30" cy="320" r="2.5" fill="currentColor" opacity="0.7"></circle>
+    </g>
+
+    <g transform="translate(40 40) rotate(-6 100 130)">
+        <g class="hero-scene__letter hero-scene__letter--a">
+            <path
+                d="M24 156 Q16 156 16 144 L16 140 Q16 130 24 120 L64 44 Q72 32 84 32 Q96 32 104 44 L108 52 Q104 48 96 56 L64 116 L96 116 L104 100 Q108 92 116 96 Q124 100 120 108 L108 132 Q104 144 92 144 L76 144 L72 152 Q68 160 56 160 L36 160 Q24 160 24 156 Z M64 116 L56 132 L76 132 L76 116 Z"
+                fill="var(--bg-elevated)"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linejoin="round"
+            ></path>
+            <path
+                d="M24 156 Q16 156 16 144 L16 140 Q16 130 24 120 L64 44 Q72 32 84 32 Q96 32 104 44 L108 52 Q104 48 96 56 L64 116 L96 116 L104 100 Q108 92 116 96 Q124 100 120 108 L108 132 Q104 144 92 144 L76 144 L72 152 Q68 160 56 160 L36 160 Q24 160 24 156 Z M64 116 L56 132 L76 132 L76 116 Z"
+                fill="url(#halftone-dense)"
+                opacity="0.85"
+            ></path>
+            <path
+                d="M58 60 L42 92"
+                stroke="var(--bg-elevated)"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                fill="none"
+                opacity="0.85"
+            ></path>
+        </g>
+
+        <g class="hero-scene__letter hero-scene__letter--t" transform="translate(108 -4)">
+            <path
+                d="M0 12 Q0 0 12 0 L68 0 Q80 0 80 12 L80 28 Q80 40 68 40 L52 40 L52 120 Q52 132 40 132 L28 132 Q16 132 16 120 L16 40 L12 40 Q0 40 0 28 Z"
+                fill="var(--bg-elevated)"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linejoin="round"
+            ></path>
+            <path
+                d="M0 12 Q0 0 12 0 L68 0 Q80 0 80 12 L80 28 Q80 40 68 40 L52 40 L52 120 Q52 132 40 132 L28 132 Q16 132 16 120 L16 40 L12 40 Q0 40 0 28 Z"
+                fill="url(#halftone-dense)"
+                opacity="0.85"
+            ></path>
+            <path
+                d="M22 8 L60 8"
+                stroke="var(--bg-elevated)"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                fill="none"
+                opacity="0.85"
+            ></path>
+        </g>
+
+        <g class="hero-scene__drip">
+            <path
+                d="M64 156 Q64 174 60 184 Q56 194 60 200 Q66 204 70 200 Q74 192 70 184 Q66 174 66 156 Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linejoin="round"
+            ></path>
+            <path
+                d="M148 128 Q148 146 144 156 Q140 166 144 172 Q150 176 154 172 Q158 164 154 156 Q150 146 150 128 Z"
+                transform="translate(108 -4)"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linejoin="round"
+            ></path>
+        </g>
+    </g>
+
+    <g class="hero-scene__sparks">
+        <path
+            d="M230 50 L234 30 L238 50 L258 54 L238 58 L234 78 L230 58 L210 54 Z"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+        ></path>
+        <path
+            d="M50 330 L52 320 L54 330 L64 332 L54 334 L52 344 L50 334 L40 332 Z"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        ></path>
+    </g>
+
+    <g class="hero-scene__mist" opacity="0.6">
+        <circle cx="200" cy="100" r="2.5" fill="currentColor"></circle>
+        <circle cx="218" cy="120" r="1.8" fill="currentColor"></circle>
+        <circle cx="190" cy="140" r="2" fill="currentColor"></circle>
+        <circle cx="208" cy="80" r="1.5" fill="currentColor"></circle>
+        <circle cx="234" cy="138" r="2" fill="currentColor"></circle>
+        <circle cx="48" cy="200" r="2.5" fill="currentColor"></circle>
+        <circle cx="36" cy="218" r="1.8" fill="currentColor"></circle>
+        <circle cx="60" cy="226" r="2" fill="currentColor"></circle>
+        <circle cx="22" cy="240" r="1.5" fill="currentColor"></circle>
+    </g>
+</svg>
+
+<style>
+    .hero-scene {
+        color: var(--text);
+        width: 100%;
+        height: auto;
+        max-width: 360px;
+    }
+
+    .hero-scene__circuit {
+        color: var(--accent);
+    }
+
+    .hero-scene__sparks {
+        color: var(--accent);
+    }
+
+    .hero-scene__drip {
+        color: var(--accent);
+    }
+
+    .hero-scene__mist {
+        color: var(--accent);
+    }
+
+    .hero-scene__letter--a path:nth-child(2),
+    .hero-scene__letter--t path:nth-child(2) {
+        color: var(--accent);
+    }
+</style>
