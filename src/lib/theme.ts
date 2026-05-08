@@ -19,13 +19,10 @@ function setTheme(theme: Theme) {
 
 setTheme(getPreferredTheme());
 
-const pullString = document.querySelector('.pull-string');
-if (pullString) {
-    pullString.addEventListener('click', () => {
-        pullString.classList.add('pulling');
-        const currentTheme: Theme = html.classList.contains('dark') ? 'dark' : 'light';
-        const newTheme: Theme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        setTimeout(() => pullString.classList.remove('pulling'), 350);
+const toggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        const current: Theme = html.classList.contains('dark') ? 'dark' : 'light';
+        setTheme(current === 'dark' ? 'light' : 'dark');
     });
 }

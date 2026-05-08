@@ -1,7 +1,30 @@
 ---
 ---
 
-<button class="pull-string" aria-label="Toggle dark mode" title="Toggle theme">
-    <div class="pull-string__line"></div>
-    <div class="pull-string__handle"></div>
+<button
+    type="button"
+    class="theme-toggle"
+    data-theme-toggle
+    aria-label="Toggle dark mode"
+    title="Toggle theme"
+>
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5" fill="currentColor"></circle>
+        <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="5"></line>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="5" y2="12"></line>
+            <line x1="19" y1="12" x2="22" y2="12"></line>
+            <line x1="4.9" y1="4.9" x2="7" y2="7"></line>
+            <line x1="17" y1="17" x2="19.1" y2="19.1"></line>
+            <line x1="4.9" y1="19.1" x2="7" y2="17"></line>
+            <line x1="17" y1="7" x2="19.1" y2="4.9"></line>
+        </g>
+    </svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+            d="M20 14.5 A 8 8 0 1 1 9.5 4 A 6.5 6.5 0 0 0 20 14.5 Z"
+            fill="currentColor"
+        ></path>
+    </svg>
 </button>
