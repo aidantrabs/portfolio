@@ -1,0 +1,24 @@
+---
+const TOKENS = ['LET\'S TALK', 'LET\'S TALK', 'LET\'S TALK', 'LET\'S TALK', 'LET\'S TALK', 'LET\'S TALK'];
+---
+
+<aside class="side-rail" aria-hidden="true">
+    <div class="side-rail__track" data-side-rail-track>
+        {
+            TOKENS.map((token, i) => (
+                <span class="side-rail__item">
+                    <span>{token}</span>
+                    <span class="side-rail__sep">/</span>
+                </span>
+            ))
+        }
+        {
+            TOKENS.map((token, i) => (
+                <span class="side-rail__item">
+                    <span>{token}</span>
+                    <span class="side-rail__sep">/</span>
+                </span>
+            ))
+        }
+    </div>
+</aside>

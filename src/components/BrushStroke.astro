@@ -1,0 +1,22 @@
+---
+interface Props {
+    class?: string | undefined;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+    viewBox="0 0 200 24"
+    class:list={['brush-stroke', className]}
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <path
+        d="M2 14 C 14 6, 28 18, 46 11 C 64 5, 82 17, 102 12 C 124 7, 144 19, 162 13 C 178 8, 188 16, 198 11 L 197 17 C 184 22, 168 14, 152 19 C 134 24, 116 12, 96 18 C 76 23, 56 11, 38 17 C 22 22, 12 14, 4 19 Z"
+        fill="currentColor"
+    />
+    <ellipse cx="62" cy="13" rx="2" ry="0.8" fill="var(--bg)" opacity="0.6" />
+    <ellipse cx="148" cy="14" rx="3" ry="1" fill="var(--bg)" opacity="0.5" />
+</svg>

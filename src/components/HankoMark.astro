@@ -1,0 +1,40 @@
+---
+interface Props {
+    label?: string;
+    size?: number;
+    class?: string | undefined;
+}
+
+const { label = 'AT', size = 56, class: className = '' } = Astro.props;
+---
+
+<span
+    class:list={['hanko', className]}
+    style={`--hanko-size: ${size}px;`}
+    aria-hidden="true"
+>
+    <svg
+        viewBox="0 0 100 100"
+        class="hanko__ring"
+        preserveAspectRatio="none"
+        focusable="false"
+    >
+        <path
+            d="M50 6 C 76 4, 96 22, 95 50 S 78 95, 50 95 S 5 76, 6 50 S 24 8, 50 6 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M14 30 L 18 28 M82 24 L 88 28 M88 70 L 92 76 M14 76 L 12 82 M50 4 L 52 8 M48 96 L 50 92"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.6"
+            stroke-linecap="round"
+            opacity="0.55"
+        />
+    </svg>
+    <span class="hanko__label">{label}</span>
+</span>
