@@ -1,14 +1,12 @@
 ---
 interface Props {
-    index: number;
     title: string;
     tagline: string;
     description: string;
     url: string;
 }
 
-const { index, title, tagline, description, url } = Astro.props;
-const padded = String(index).padStart(2, '0');
+const { title, tagline, description, url } = Astro.props;
 
 let handle = '';
 try {
@@ -25,10 +23,9 @@ try {
 <li class="studio-card">
     <a href={url} target="_blank" rel="noopener" class="studio-card__link">
         <div class="studio-card__head">
-            <span class="studio-card__index">№ {padded}</span>
+            <h3 class="studio-card__title">{title}</h3>
             <span class="studio-card__arrow" aria-hidden="true">↗</span>
         </div>
-        <h3 class="studio-card__title">{title}</h3>
         <p class="studio-card__tagline">{tagline}</p>
         <p class="studio-card__desc">{description}</p>
         <div class="studio-card__foot">

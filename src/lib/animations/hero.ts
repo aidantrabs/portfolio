@@ -1,15 +1,19 @@
 import { gsap, prefersReducedMotion } from '../gsap';
 
-const PARALLAX = 80;
-const TILT_X = 16;
-const TILT_Y = 24;
+const PARALLAX = 90;
+const TILT_X = 18;
+const TILT_Y = 26;
 const LERP = 0.08;
 
 export function animateHero() {
     introHero();
     if (prefersReducedMotion) return;
-    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+        bindHeroIdleFloat();
+        return;
+    }
     bindHero3D();
+    bindHeroIdleFloat();
 }
 
 function introHero() {
@@ -17,16 +21,16 @@ function introHero() {
 
     const tl = gsap.timeline({ delay: 0.1 });
 
-    tl.from('.hero__topbar', {
+    tl.from('.hero-scene__layer--ghost', {
         opacity: 0,
-        y: -8,
-        duration: 0.5,
+        scale: 0.86,
+        duration: 1.1,
+        ease: 'power3.out',
     });
-
     tl.from(
         '.hero-scene__layer--back',
         { opacity: 0, scale: 0.92, duration: 1.0, ease: 'power3.out' },
-        '-=0.2',
+        '-=0.95',
     );
     tl.from(
         '.hero-scene__layer--mid',
@@ -43,6 +47,18 @@ function introHero() {
             ease: 'power3.out',
         },
         '-=0.75',
+    );
+
+    tl.from(
+        '.hero-scene__accent',
+        {
+            opacity: 0,
+            scale: 0.6,
+            duration: 0.55,
+            stagger: 0.06,
+            ease: 'back.out(2)',
+        },
+        '-=0.6',
     );
 
     tl.from(
@@ -70,6 +86,23 @@ function introHero() {
     );
 }
 
+function bindHeroIdleFloat() {
+    const scene = document.querySelector<HTMLElement>('[data-hero-scene]');
+    if (!scene) return;
+
+    const proxy = { y: 0 };
+    gsap.to(proxy, {
+        y: 1,
+        duration: 4,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        onUpdate: () => {
+            scene.style.setProperty('--float-y', `${(proxy.y - 0.5) * 14}px`);
+        },
+    });
+}
+
 function bindHero3D() {
     const scene = document.querySelector<HTMLElement>('[data-hero-scene]');
     if (!scene) return;
@@ -85,7 +118,7 @@ function bindHero3D() {
 
     const setVars = () => {
         scene.style.setProperty('--px', `${currentX * PARALLAX}px`);
-        scene.style.setProperty('--py', `${currentY * PARALLAX * 0.6}px`);
+        scene.style.setProperty('--py', `${currentY * PARALLAX * 0.55}px`);
         scene.style.setProperty('--ry', `${currentX * TILT_Y}deg`);
         scene.style.setProperty('--rx', `${-currentY * TILT_X}deg`);
         scene.style.setProperty('--pressed', `${pressed}`);
@@ -151,6 +184,5 @@ function bindHero3D() {
     };
 
     scene.addEventListener('mouseup', release);
-    scene.addEventListener('mouseleave', release);
     window.addEventListener('blur', release);
 }

@@ -23,13 +23,10 @@ const studioItems = studios as Array<{
 
 <section id="work" class="section section--projects">
     <div class="section__header">
-        <div class="section__heading">
-            <span class="section__num" data-section-num>02</span>
-            <h2 class="section__title" data-section-title>work</h2>
-        </div>
+        <h2 class="section__title" data-section-title>work</h2>
         <span class="section__count">
-            {String(personalItems.length + studioItems.length).padStart(2, '0')}
-            <span class="section__count-label">/ selected</span>
+            {personalItems.length + studioItems.length}
+            <span class="section__count-label">selected</span>
         </span>
     </div>
 
@@ -37,13 +34,11 @@ const studioItems = studios as Array<{
         <div class="work-group__label">
             <span>studios</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
-            <span class="work-group__label-count">{String(studioItems.length).padStart(2, '0')}</span>
         </div>
         <ul class="studios-grid">
             {
-                studioItems.map((studio, i) => (
+                studioItems.map((studio) => (
                     <StudioCard
-                        index={i + 1}
                         title={studio.title}
                         tagline={studio.tagline}
                         description={studio.description}
@@ -58,13 +53,11 @@ const studioItems = studios as Array<{
         <div class="work-group__label">
             <span>personal projects</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
-            <span class="work-group__label-count">{String(personalItems.length).padStart(2, '0')}</span>
         </div>
         <ol class="projects-list">
             {
-                personalItems.map((project, i) => (
+                personalItems.map((project) => (
                     <ProjectRow
-                        index={i + 1}
                         title={project.title}
                         year={project.year}
                         role={project.role}

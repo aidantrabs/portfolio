@@ -1,6 +1,5 @@
 ---
 interface Props {
-    index: number;
     title: string;
     year: number;
     role: string;
@@ -8,16 +7,14 @@ interface Props {
     url: string;
 }
 
-const { index, title, year, role, description, url } = Astro.props;
-const padded = String(index).padStart(2, '0');
+const { title, year, role, description, url } = Astro.props;
 ---
 
 <li class="project-row">
     <a href={url} target="_blank" rel="noopener" class="project-row__link">
         <span class="project-row__bar" aria-hidden="true"></span>
-        <span class="project-row__index">№ {padded}</span>
-        <span class="project-row__meta">{year} / {role}</span>
         <h3 class="project-row__title">{title}</h3>
+        <span class="project-row__meta">{year} / {role}</span>
         <p class="project-row__desc">{description}</p>
         <span class="project-row__arrow" aria-hidden="true">↗</span>
     </a>
