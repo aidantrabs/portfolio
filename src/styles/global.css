@@ -199,14 +199,7 @@
     pointer-events: none;
     z-index: 32;
     overflow: hidden;
-    background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 2px,
-        rgba(0, 0, 0, 0.05) 2.5px,
-        rgba(0, 0, 0, 0.05) 3.2px
-    );
-    mix-blend-mode: multiply;
+    background: transparent;
 }
 
 .dark .scanlines {
@@ -214,8 +207,8 @@
         to bottom,
         transparent 0px,
         transparent 2px,
-        rgba(255, 255, 255, 0.06) 2.5px,
-        rgba(255, 255, 255, 0.06) 3.2px
+        rgba(255, 255, 255, 0.04) 2.5px,
+        rgba(255, 255, 255, 0.04) 3.2px
     );
     mix-blend-mode: screen;
 }
@@ -294,23 +287,7 @@
 }
 
 .pull-string {
-    position: fixed;
-    top: 16px;
-    right: 96px;
-    z-index: 36;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-}
-
-@media (max-width: 640px) {
-    .pull-string {
-        display: none;
-    }
+    display: none;
 }
 
 .pull-string__line {
@@ -697,19 +674,6 @@
 .app-shell__status-dot--on {
     background-color: var(--accent);
     border-color: var(--accent);
-    animation: status-pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes status-pulse {
-    0%,
-    100% {
-        opacity: 1;
-        box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
-    }
-    50% {
-        opacity: 0.6;
-        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 0%, transparent);
-    }
 }
 
 .app-shell__status-label {
@@ -927,18 +891,17 @@
 
 .hero-scene-wrap {
     position: absolute;
-    right: -4%;
-    bottom: 12%;
-    width: clamp(280px, 38vw, 480px);
+    right: 4%;
+    bottom: 9%;
+    width: clamp(220px, 26vw, 340px);
     pointer-events: none;
-    opacity: 0.95;
+    opacity: 0.65;
     z-index: 1;
-    transform: rotate(-3deg);
-    filter: drop-shadow(2px 4px 0 rgba(0, 0, 0, 0.06));
+    transform: rotate(-2deg);
 }
 
 .dark .hero-scene-wrap {
-    filter: drop-shadow(2px 4px 0 rgba(0, 0, 0, 0.4));
+    opacity: 0.55;
 }
 
 .site-nav {
