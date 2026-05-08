@@ -1,28 +1,13 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
+import HankoMark from './HankoMark.astro';
 ---
 
 <div class="app-shell" aria-hidden="true">
     <div class="app-shell__corner app-shell__corner--top-left">
         <a href="#top" data-scroll-to="top" class="app-shell__brand" aria-label="Top">
-            <svg viewBox="0 0 100 100" class="app-shell__brand-mark" aria-hidden="true">
-                <g transform="rotate(-8 50 50)">
-                    <path
-                        d="M12 78 Q8 78 8 72 L8 70 Q8 65 12 60 L32 22 Q36 16 42 16 Q48 16 52 22 L54 26 Q52 24 48 28 L32 58 L48 58 L52 50 Q54 46 58 48 Q62 50 60 54 L54 66 Q52 72 46 72 L38 72 L36 76 Q34 80 28 80 L18 80 Q12 80 12 78 Z M32 58 L28 66 L38 66 L38 58 Z"
-                        fill="currentColor"
-                        stroke="var(--text)"
-                        stroke-width="3"
-                        stroke-linejoin="round"
-                    ></path>
-                    <path
-                        d="M48 20 Q48 14 54 14 L82 14 Q88 14 88 20 L88 28 Q88 34 82 34 L74 34 L74 74 Q74 80 68 80 L62 80 Q56 80 56 74 L56 34 L54 34 Q48 34 48 28 Z"
-                        fill="currentColor"
-                        stroke="var(--text)"
-                        stroke-width="3"
-                        stroke-linejoin="round"
-                    ></path>
-                </g>
-            </svg>
+            <span class="app-shell__brand-mark">
+                <HankoMark label="AT" size={44} />
+            </span>
         </a>
     </div>
 
@@ -46,62 +31,14 @@ import ThemeToggle from './ThemeToggle.astro';
                 linkedin
                 <span aria-hidden="true">↗</span>
             </a>
-            <ThemeToggle />
         </div>
     </div>
 
     <div class="app-shell__corner app-shell__corner--bottom-left">
-        <svg
-            viewBox="0 0 120 24"
-            class="app-shell__barcode"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-        >
-            <g fill="currentColor">
-                <rect x="0" y="0" width="2" height="24"></rect>
-                <rect x="4" y="0" width="1" height="24"></rect>
-                <rect x="8" y="0" width="3" height="24"></rect>
-                <rect x="14" y="0" width="1" height="24"></rect>
-                <rect x="17" y="0" width="2" height="24"></rect>
-                <rect x="22" y="0" width="4" height="24"></rect>
-                <rect x="29" y="0" width="1" height="24"></rect>
-                <rect x="32" y="0" width="2" height="24"></rect>
-                <rect x="37" y="0" width="3" height="24"></rect>
-                <rect x="43" y="0" width="1" height="24"></rect>
-                <rect x="46" y="0" width="2" height="24"></rect>
-                <rect x="51" y="0" width="4" height="24"></rect>
-                <rect x="58" y="0" width="1" height="24"></rect>
-                <rect x="61" y="0" width="2" height="24"></rect>
-                <rect x="66" y="0" width="3" height="24"></rect>
-                <rect x="72" y="0" width="1" height="24"></rect>
-                <rect x="75" y="0" width="2" height="24"></rect>
-                <rect x="80" y="0" width="1" height="24"></rect>
-                <rect x="84" y="0" width="3" height="24"></rect>
-                <rect x="90" y="0" width="2" height="24"></rect>
-                <rect x="95" y="0" width="1" height="24"></rect>
-                <rect x="99" y="0" width="4" height="24"></rect>
-                <rect x="106" y="0" width="1" height="24"></rect>
-                <rect x="110" y="0" width="2" height="24"></rect>
-                <rect x="115" y="0" width="3" height="24"></rect>
-            </g>
-        </svg>
         <div class="app-shell__id">
             <span>aidan traboulay</span>
-            <span>portfolio</span>
-            <span class="app-shell__id-meta">~26kb / cf edge</span>
+            <span>portfolio / vol.iii</span>
+            <span class="app-shell__id-meta">~28kb / cf edge</span>
         </div>
-    </div>
-
-    <div class="app-shell__corner app-shell__corner--bottom-right">
-        <svg viewBox="0 0 24 24" class="app-shell__handle" aria-hidden="true">
-            <line x1="22" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="1.5"></line>
-            <line x1="22" y1="12" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"></line>
-            <line x1="22" y1="18" x2="18" y2="22" stroke="currentColor" stroke-width="1.5"></line>
-        </svg>
-    </div>
-
-    <div class="app-shell__scroll-indicator">
-        <div class="app-shell__scroll-track"></div>
-        <div class="app-shell__scroll-thumb"></div>
     </div>
 </div>
