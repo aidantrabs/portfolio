@@ -1,4 +1,4 @@
-import './style.css';
+import './styles/global.css';
 
 const THEME_KEY = 'theme';
 const html = document.documentElement;
