@@ -1,8 +1,10 @@
 ---
 const META = [
     { label: 'role', value: 'software engineer' },
-    { label: 'focus', value: 'infra / sre / platform' },
+    { label: 'focus', value: 'infra · sre · platform' },
     { label: 'based', value: 'trinidad and tobago' },
+    { label: 'work auth', value: 'tt · ca · us' },
+    { label: 'shipping since', value: '2019' },
     { label: 'status', value: 'open to work', accent: true },
 ];
 ---
@@ -15,40 +17,42 @@ const META = [
         </div>
     </div>
 
-    <div class="about-prose fade-in-up-target">
-        <p class="about-statement">
-            software engineer building
-            <span class="about-statement__highlight">reliable, scalable infrastructure</span>
-            and shipping systems that perform under real world conditions.
-        </p>
+    <div class="about-grid">
+        <div class="about-prose fade-in-up-target">
+            <p class="about-statement">
+                software engineer building
+                <span class="about-statement__highlight">reliable, scalable infrastructure</span>
+                and shipping systems that perform under real world conditions.
+            </p>
 
-        <p class="about-bio">
-            authorized to work in trinidad and tobago, canada, and the united states. i combine
-            devops and sre practices with project leadership - translating requirements into
-            scalable systems and guiding delivery from architecture to production.
-        </p>
+            <p class="about-bio">
+                authorized to work in trinidad and tobago, canada, and the united states. i combine
+                devops and sre practices with project leadership - translating requirements into
+                scalable systems and guiding delivery from architecture to production.
+            </p>
 
-        <p class="about-bio">
-            most days you'll find me deep in postgres internals, pushing terraform changes, or
-            debugging the kind of edge cases that only show up at 3am.
-        </p>
+            <p class="about-bio">
+                most days you'll find me deep in postgres internals, pushing terraform changes, or
+                debugging the kind of edge cases that only show up at 3am.
+            </p>
+        </div>
+
+        <dl class="about-meta fade-in-up-target">
+            {
+                META.map((item) => (
+                    <div class="about-meta__item">
+                        <dt class="about-meta__label">{item.label}</dt>
+                        <dd
+                            class:list={[
+                                'about-meta__value',
+                                item.accent && 'about-meta__value--accent',
+                            ]}
+                        >
+                            {item.value}
+                        </dd>
+                    </div>
+                ))
+            }
+        </dl>
     </div>
-
-    <dl class="about-meta fade-in-up-target">
-        {
-            META.map((item) => (
-                <div class="about-meta__item">
-                    <dt class="about-meta__label">{item.label}</dt>
-                    <dd
-                        class:list={[
-                            'about-meta__value',
-                            item.accent && 'about-meta__value--accent',
-                        ]}
-                    >
-                        {item.value}
-                    </dd>
-                </div>
-            ))
-        }
-    </dl>
 </section>
