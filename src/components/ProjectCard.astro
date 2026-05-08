@@ -13,18 +13,38 @@ interface Props {
 }
 
 const { title, year, role, description, url, glyph } = Astro.props;
+const filename = `${title.replace(/\s+/g, '_').toLowerCase()}.tsx`;
 ---
 
 <a href={url} class="project-card" target="_blank" rel="noopener">
-    <div class="project-card__glyph-wrap">
-        <ProjectGlyph variant={glyph} />
+    <div class="project-card__bar">
+        <span class="project-card__dots" aria-hidden="true">
+            <span class="project-card__dot"></span>
+            <span class="project-card__dot"></span>
+            <span class="project-card__dot"></span>
+        </span>
+        <span class="project-card__filename">{filename}</span>
+        <span class="project-card__close" aria-hidden="true">×</span>
     </div>
-    <div class="project-card__meta">
-        <span class="project-card__year">{year}</span>
-        <span class="project-card__sep">/</span>
-        <span class="project-card__role">{role}</span>
+
+    <div class="project-card__body">
+        <div class="project-card__head">
+            <div class="project-card__glyph-wrap">
+                <ProjectGlyph variant={glyph} />
+            </div>
+            <div class="project-card__meta">
+                <span class="project-card__year">{year}</span>
+                <span class="project-card__sep">/</span>
+                <span class="project-card__role">{role}</span>
+            </div>
+        </div>
+
+        <h3 class="project-card__title">{title}</h3>
+        <p class="project-card__desc">{description}</p>
+
+        <div class="project-card__foot">
+            <span class="project-card__cta">read more</span>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+        </div>
     </div>
-    <h3 class="project-card__title">{title}</h3>
-    <p class="project-card__desc">{description}</p>
-    <span class="project-card__arrow" aria-hidden="true">↗</span>
 </a>
