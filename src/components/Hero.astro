@@ -1,101 +1,25 @@
 ---
 import HeroScene from './illustrations/HeroScene.astro';
-
-const META_LINK_CLASS =
-    'link-hover text-base font-medium uppercase tracking-[0.12em] text-muted hover:text-theme';
-const LABEL_CLASS =
-    'text-base font-semibold uppercase tracking-[0.18em] text-muted';
 ---
 
-<section id="top" class="relative h-screen-safe p-6 md:p-10 lg:p-12">
+<section id="top" class="hero">
     <div class="graffiti-bg" aria-hidden="true">aidan</div>
 
     <div class="hero-scene-wrap" aria-hidden="true">
         <HeroScene />
     </div>
 
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="hero__center">
         <h1 class="graffiti-name text-accent">
             aidan
             <br />
             traboulay
         </h1>
+        <p class="hero__tag">software engineer / building infrastructure</p>
     </div>
 
-    <div class="absolute bottom-6 left-6 right-6 md:hidden">
-        <div class="mb-4">
-            <p class:list={[LABEL_CLASS, 'mb-1']}>Say Hello</p>
-            <a
-                href="mailto:aidantraboulay@protonmail.com"
-                class="link-hover text-base font-medium hover:text-accent"
-            >
-                aidantraboulay@protonmail.com
-            </a>
-        </div>
-
-        <div class="flex gap-4 flex-wrap">
-            <a
-                href="https://github.com/aidantrabs"
-                target="_blank"
-                rel="noopener"
-                class={META_LINK_CLASS}>GitHub</a
-            >
-            <a
-                href="https://linkedin.com/in/aidan-traboulay"
-                target="_blank"
-                rel="noopener"
-                class={META_LINK_CLASS}>LinkedIn</a
-            >
-            <a
-                href="https://blog.aidantraboulay.dev"
-                target="_blank"
-                rel="noopener"
-                class={META_LINK_CLASS}>Blog</a
-            >
-        </div>
-    </div>
-
-    <div class="absolute bottom-10 left-10 lg:bottom-12 lg:left-12 hidden md:block">
-        <p class:list={[LABEL_CLASS, 'mb-1']}>Say Hello</p>
-        <a
-            href="mailto:aidantraboulay@protonmail.com"
-            class="link-hover text-base font-medium hover:text-accent"
-        >
-            aidantraboulay@protonmail.com
-        </a>
-    </div>
-
-    <div class="absolute bottom-10 right-10 lg:bottom-12 lg:right-12 hidden md:flex gap-6">
-        <a
-            href="https://github.com/aidantrabs"
-            target="_blank"
-            rel="noopener"
-            class={META_LINK_CLASS}>GitHub</a
-        >
-        <a
-            href="https://linkedin.com/in/aidan-traboulay"
-            target="_blank"
-            rel="noopener"
-            class={META_LINK_CLASS}>LinkedIn</a
-        >
-        <a
-            href="https://blog.aidantraboulay.dev"
-            target="_blank"
-            rel="noopener"
-            class={META_LINK_CLASS}>Blog</a
-        >
-    </div>
-
-    <div class="absolute top-24 left-10 md:top-28 md:left-10 lg:top-28 lg:left-12 hidden md:block">
-        <p class="text-base font-medium uppercase tracking-[0.18em] text-muted">
-            <span class="text-accent">~7kb&nbsp;</span>gzip
-        </p>
-        <p class="text-base font-medium uppercase tracking-[0.18em] text-muted mt-1">
-            Cloudflare <span class="text-accent">/&nbsp;</span>edge
-        </p>
-    </div>
-
-    <div class="absolute bottom-10 left-1/2 animate-scroll-hint hidden md:block">
-        <span class="text-base font-medium uppercase tracking-[0.18em] text-muted">Scroll</span>
-    </div>
+    <a href="#about" data-scroll-to="about" class="hero__scroll" aria-label="Scroll to about">
+        <span>scroll</span>
+        <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+    </a>
 </section>
