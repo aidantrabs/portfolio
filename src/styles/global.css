@@ -175,72 +175,194 @@
     }
 }
 
-.scanlines {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 32;
+.vhs-accent {
+    position: absolute;
+    top: 14%;
+    right: 4%;
+    width: 220px;
+    border: 1.5px solid #1a1a1a;
+    background-color: #0e0d0d;
+    color: #f5f5f4;
     overflow: hidden;
-    background: transparent;
+    z-index: 2;
+    border-radius: 3px;
+    pointer-events: none;
+    box-shadow: 4px 4px 0 var(--accent);
+    transform: rotate(-3deg);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.dark .scanlines {
+@media (max-width: 900px) {
+    .vhs-accent {
+        top: auto;
+        bottom: 8%;
+        right: 6%;
+        width: 170px;
+    }
+}
+
+@media (max-width: 540px) {
+    .vhs-accent {
+        display: none;
+    }
+}
+
+.vhs-accent__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-bottom: 1.5px solid #1a1a1a;
+    background-color: #060505;
+    font-size: 16px;
+    font-weight: 500;
+    color: #a8a29e;
+}
+
+.vhs-accent__rec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.vhs-accent__rec-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    animation: vhs-blink 1s steps(2, end) infinite;
+}
+
+@keyframes vhs-blink {
+    50% {
+        opacity: 0.25;
+    }
+}
+
+.vhs-accent__name {
+    color: #d6d3d1;
+}
+
+.vhs-accent__screen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background:
+        radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.vhs-accent__text {
+    font-family: var(--font-graffiti);
+    font-size: 84px;
+    line-height: 0.85;
+    color: var(--accent);
+    text-shadow:
+        -2px 0 0 rgba(0, 220, 255, 0.55),
+        2px 0 0 rgba(255, 60, 60, 0.55);
+    animation: vhs-chroma 4s ease-in-out infinite;
+    letter-spacing: -0.02em;
+}
+
+@keyframes vhs-chroma {
+    0%,
+    100% {
+        text-shadow:
+            -2px 0 0 rgba(0, 220, 255, 0.55),
+            2px 0 0 rgba(255, 60, 60, 0.55);
+    }
+    47% {
+        text-shadow:
+            -1px 0 0 rgba(0, 220, 255, 0.45),
+            1px 0 0 rgba(255, 60, 60, 0.45);
+    }
+    50% {
+        text-shadow:
+            -3.5px 0 0 rgba(0, 220, 255, 0.7),
+            3.5px 0 0 rgba(255, 60, 60, 0.7);
+    }
+}
+
+.vhs-accent__sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 16px;
+    color: #a8a29e;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+}
+
+.vhs-accent__scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background: repeating-linear-gradient(
         to bottom,
         transparent 0px,
         transparent 2px,
-        rgba(255, 255, 255, 0.04) 2.5px,
-        rgba(255, 255, 255, 0.04) 3.2px
+        rgba(255, 255, 255, 0.06) 2.4px,
+        rgba(255, 255, 255, 0.06) 3.2px
     );
     mix-blend-mode: screen;
 }
 
-.scanlines__sweep {
+.vhs-accent__sweep {
     position: absolute;
     left: 0;
     right: 0;
-    height: 280px;
+    height: 100px;
+    pointer-events: none;
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        color-mix(in srgb, var(--accent) 0%, transparent) 35%,
-        color-mix(in srgb, var(--accent) 5%, transparent) 50%,
-        color-mix(in srgb, var(--accent) 0%, transparent) 65%,
+        color-mix(in srgb, var(--accent) 0%, transparent) 30%,
+        color-mix(in srgb, var(--accent) 22%, transparent) 50%,
+        color-mix(in srgb, var(--accent) 0%, transparent) 70%,
         transparent 100%
     );
-    animation: scan-sweep 14s linear infinite;
-    will-change: top;
+    animation: vhs-sweep 4.5s linear infinite;
     mix-blend-mode: screen;
-    opacity: 0.35;
 }
 
-.dark .scanlines__sweep {
-    opacity: 0.25;
-}
-
-@keyframes scan-sweep {
+@keyframes vhs-sweep {
     0% {
-        top: -280px;
+        top: -100px;
     }
     100% {
         top: 100%;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .scanlines__sweep {
-        animation: none;
-        display: none;
-    }
+.vhs-accent__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-top: 1.5px solid #1a1a1a;
+    background-color: #060505;
+    font-size: 16px;
+    font-weight: 500;
+    color: #78716c;
+    font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 640px) {
-    .scanlines {
-        opacity: 0.6;
-    }
-    .scanlines__sweep {
-        animation-duration: 12s;
-        opacity: 0.4;
+.vhs-accent__time {
+    color: #d6d3d1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vhs-accent__sweep,
+    .vhs-accent__rec-dot,
+    .vhs-accent__text {
+        animation: none;
     }
 }
 
