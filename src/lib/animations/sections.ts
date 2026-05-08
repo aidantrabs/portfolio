@@ -1,4 +1,4 @@
-import { gsap, ScrollTrigger, prefersReducedMotion } from '../gsap';
+import { gsap, prefersReducedMotion } from '../gsap';
 
 function splitChars(el: HTMLElement) {
     const text = el.textContent ?? '';
