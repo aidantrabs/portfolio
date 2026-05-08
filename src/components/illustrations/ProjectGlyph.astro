@@ -1,0 +1,293 @@
+---
+type Variant = 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
+
+interface Props {
+    variant: Variant;
+    class?: string | undefined;
+}
+
+const { variant, class: className = '' } = Astro.props;
+---
+
+<svg
+    viewBox="0 0 64 64"
+    class:list={['illustration', 'project-glyph', `project-glyph--${variant}`, className]}
+    aria-hidden="true"
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    {
+        variant === 'server' && (
+            <g>
+                <rect
+                    x="8"
+                    y="10"
+                    width="48"
+                    height="13"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    rx="2"
+                />
+                <circle cx="14" cy="16.5" r="1.8" fill="var(--accent)" />
+                <line
+                    x1="20"
+                    y1="16.5"
+                    x2="36"
+                    y2="16.5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+                <rect
+                    x="8"
+                    y="27"
+                    width="48"
+                    height="13"
+                    fill="url(#halftone)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    rx="2"
+                />
+                <circle cx="14" cy="33.5" r="1.8" fill="var(--accent)" />
+                <rect
+                    x="8"
+                    y="44"
+                    width="48"
+                    height="13"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    rx="2"
+                />
+                <circle cx="14" cy="50.5" r="1.8" fill="var(--accent)" />
+                <line
+                    x1="20"
+                    y1="50.5"
+                    x2="44"
+                    y2="50.5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+            </g>
+        )
+    }
+
+    {
+        variant === 'cli' && (
+            <g>
+                <rect
+                    x="6"
+                    y="10"
+                    width="52"
+                    height="44"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    rx="3"
+                />
+                <line
+                    x1="6"
+                    y1="20"
+                    x2="58"
+                    y2="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+                <circle cx="11" cy="15" r="1.4" fill="var(--accent)" />
+                <circle cx="16" cy="15" r="1.4" fill="currentColor" />
+                <circle cx="21" cy="15" r="1.4" fill="currentColor" />
+                <path
+                    d="M14 32 L20 36 L14 40"
+                    fill="none"
+                    stroke="var(--accent)"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+                <rect x="24" y="38" width="14" height="3" fill="currentColor" />
+                <rect x="42" y="32" width="3" height="9" fill="var(--accent)" />
+            </g>
+        )
+    }
+
+    {
+        variant === 'web' && (
+            <g>
+                <rect
+                    x="6"
+                    y="10"
+                    width="52"
+                    height="44"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    rx="3"
+                />
+                <line
+                    x1="6"
+                    y1="20"
+                    x2="58"
+                    y2="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+                <circle cx="11" cy="15" r="1.4" fill="var(--accent)" />
+                <circle cx="16" cy="15" r="1.4" fill="currentColor" />
+                <path
+                    d="M16 30 L10 36 L16 42 M48 30 L54 36 L48 42 M28 44 L36 26"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+                <circle cx="32" cy="36" r="1.6" fill="var(--accent)" />
+            </g>
+        )
+    }
+
+    {
+        variant === 'tools' && (
+            <g>
+                <circle
+                    cx="22"
+                    cy="42"
+                    r="11"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                />
+                <circle
+                    cx="22"
+                    cy="42"
+                    r="4"
+                    fill="var(--accent)"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+                <path
+                    d="M22 26 L22 31 M22 53 L22 58 M6 42 L11 42 M33 42 L38 42 M11 31 L14 34 M30 50 L33 53 M11 53 L14 50 M30 34 L33 31"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                />
+                <path
+                    d="M40 8 L52 20 L48 24 L36 12 Q34 10 36 8 Q38 6 40 8 Z M48 24 L56 32"
+                    fill="url(#halftone)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                />
+            </g>
+        )
+    }
+
+    {
+        variant === 'data' && (
+            <g>
+                <ellipse
+                    cx="32"
+                    cy="14"
+                    rx="20"
+                    ry="6"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                />
+                <path
+                    d="M12 14 L12 50 Q12 56 32 56 Q52 56 52 50 L52 14"
+                    fill="url(#halftone)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                />
+                <ellipse
+                    cx="32"
+                    cy="14"
+                    rx="20"
+                    ry="6"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                />
+                <path
+                    d="M12 28 Q22 32 32 32 Q42 32 52 28"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    opacity="0.7"
+                />
+                <path
+                    d="M12 42 Q22 46 32 46 Q42 46 52 42"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    opacity="0.7"
+                />
+                <circle cx="46" cy="14" r="2" fill="var(--accent)" />
+            </g>
+        )
+    }
+
+    {
+        variant === 'experiment' && (
+            <g>
+                <path
+                    d="M24 8 L24 24 L12 50 Q10 56 18 56 L46 56 Q54 56 52 50 L40 24 L40 8 Z"
+                    fill="var(--bg-elevated)"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                />
+                <path
+                    d="M19 38 L45 38"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+                <path
+                    d="M22 44 Q26 48 30 44 Q34 40 38 44 Q42 48 46 44 L48 50 Q44 56 32 56 Q20 56 16 50 Z"
+                    fill="url(#halftone)"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                />
+                <line
+                    x1="22"
+                    y1="8"
+                    x2="42"
+                    y2="8"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                />
+                <circle cx="28" cy="46" r="1.6" fill="var(--accent)" />
+                <circle cx="36" cy="50" r="1.4" fill="var(--accent)" />
+                <path
+                    d="M48 14 L50 8 L52 14 L58 16 L52 18 L50 24 L48 18 L42 16 Z"
+                    fill="var(--accent)"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                />
+            </g>
+        )
+    }
+</svg>
+
+<style>
+    .project-glyph {
+        color: var(--text);
+        width: 100%;
+        height: auto;
+    }
+</style>
