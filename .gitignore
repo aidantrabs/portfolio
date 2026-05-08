@@ -27,3 +27,7 @@ dist-ssr
 .env
 .vercel
 screenshots/
+
+# screenshots
+screenshots/
+scripts/screenshot*
