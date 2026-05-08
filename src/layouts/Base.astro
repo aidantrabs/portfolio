@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import IllustrationDefs from '../components/illustrations/IllustrationDefs.astro';
+import LoadingIndicator from '../components/LoadingIndicator.astro';
 
 interface Props {
     title?: string | undefined;
@@ -32,25 +33,16 @@ const { title, description, image, type, noindex } = Astro.props;
             href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Sedgwick+Ave+Display&display=swap"
             rel="stylesheet"
         />
-        <style is:inline>
-            body {
-                opacity: 0;
-            }
-            body.loaded {
-                opacity: 1;
-                transition: opacity 0.3s ease;
-            }
-        </style>
     </head>
     <body>
+        <LoadingIndicator />
         <IllustrationDefs />
         <slot />
         <script>
+            import '../lib/loading';
             import '../lib/theme';
             import '../lib/scroll';
             import '../lib/scroll-reveal';
-
-            document.fonts.ready.then(() => document.body.classList.add('loaded'));
         </script>
     </body>
 </html>
