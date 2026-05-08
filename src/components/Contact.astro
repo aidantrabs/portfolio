@@ -1,6 +1,4 @@
 ---
-import BrushStroke from './BrushStroke.astro';
-import HankoMark from './HankoMark.astro';
 ---
 
 <section id="contact" class="section section--contact">
@@ -9,26 +7,13 @@ import HankoMark from './HankoMark.astro';
             <span class="section__num" data-section-num>03</span>
             <h2 class="section__title" data-section-title>contact</h2>
         </div>
-        <span class="contact__status">
-            <span class="contact__status-dot" aria-hidden="true"></span>
-            <span>open to work</span>
-        </span>
     </div>
 
     <div class="contact__body fade-in-up-target">
-        <p class="contact__pitch">
-            <span>let's build</span>
-            <span class="contact__pitch-accent">
-                <span>something</span>
-                <BrushStroke class="contact__pitch-brush" />
-            </span>
-            <span>that ships.</span>
-        </p>
-
-        <p class="contact__sub">
-            available for full-time and contract work in infrastructure, platform, and full-stack
-            roles. open to remote and on-site in trinidad and tobago, canada, and the united
-            states.
+        <p class="contact__lede">
+            <span class="contact__lede-em">open to work.</span> available for full-time and contract roles in
+            infrastructure, platform, and full-stack engineering. remote or on-site in trinidad and tobago, canada,
+            and the united states.
         </p>
 
         <div class="contact__cta-row">
@@ -57,13 +42,6 @@ import HankoMark from './HankoMark.astro';
                 <span>github</span>
                 <span aria-hidden="true">↗</span>
             </a>
-        </div>
-
-        <div class="contact__signature">
-            <span class="contact__signature-hanko">
-                <HankoMark label="AT" size={56} />
-            </span>
-            <span>signed / aidan traboulay / 2026</span>
         </div>
     </div>
 </section>
