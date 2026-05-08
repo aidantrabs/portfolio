@@ -2,7 +2,7 @@
 import projects from '../content/projects.json';
 import studios from '../content/studios.json';
 import ProjectRow from './ProjectRow.astro';
-import StudioRow from './StudioRow.astro';
+import StudioCard from './StudioCard.astro';
 
 const personalItems = projects as Array<{
     title: string;
@@ -37,11 +37,12 @@ const studioItems = studios as Array<{
         <div class="work-group__label">
             <span>studios</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
+            <span class="work-group__label-count">{String(studioItems.length).padStart(2, '0')}</span>
         </div>
-        <ol class="studios-list">
+        <ul class="studios-grid">
             {
                 studioItems.map((studio, i) => (
-                    <StudioRow
+                    <StudioCard
                         index={i + 1}
                         title={studio.title}
                         tagline={studio.tagline}
@@ -50,13 +51,14 @@ const studioItems = studios as Array<{
                     />
                 ))
             }
-        </ol>
+        </ul>
     </div>
 
     <div class="work-group">
         <div class="work-group__label">
             <span>personal projects</span>
             <span class="work-group__label-tick" aria-hidden="true"></span>
+            <span class="work-group__label-count">{String(personalItems.length).padStart(2, '0')}</span>
         </div>
         <ol class="projects-list">
             {
