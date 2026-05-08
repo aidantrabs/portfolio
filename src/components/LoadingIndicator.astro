@@ -1,13 +1,10 @@
 ---
+import HankoMark from './HankoMark.astro';
 ---
 
 <div class="loading-indicator" aria-hidden="true">
-    <div class="loading-indicator__inner">
-        <span class="loading-indicator__label">loading</span>
-        <span class="loading-indicator__count">000</span>
-        <span class="loading-indicator__pct">%</span>
-    </div>
-    <div class="loading-indicator__bar">
-        <div class="loading-indicator__bar-fill"></div>
-    </div>
+    <div class="loading-indicator__brand">aidan</div>
+    <span class="loading-indicator__hanko">
+        <HankoMark label="AT" size={56} />
+    </span>
 </div>
