@@ -749,7 +749,7 @@
     text-align: center;
     margin: 0;
     position: relative;
-    transform: rotate(-2deg);
+    transform: rotate(-5deg);
 }
 
 .hero__name-shadow {
@@ -884,13 +884,16 @@
 }
 
 .section__title {
-    font-family: var(--font-serif);
-    font-size: clamp(44px, 7vw, 96px);
-    line-height: 0.95;
+    font-family: var(--font-graffiti);
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.88;
     color: var(--ink-strong);
     margin: 0;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    transform: rotate(-3deg);
+    transform-origin: 0% 100%;
+    display: inline-block;
 }
 
 .section__count {
@@ -1150,13 +1153,16 @@
 .project-row__title {
     grid-column: 2 / -1;
     grid-row: 1;
-    font-family: var(--font-serif);
-    font-size: clamp(32px, 5.5vw, 72px);
-    font-weight: 600;
-    line-height: 0.95;
+    font-family: var(--font-graffiti);
+    font-size: clamp(40px, 6.4vw, 96px);
+    font-weight: 400;
+    line-height: 0.9;
     color: var(--ink-strong);
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    transform: rotate(-2deg);
+    transform-origin: 0% 100%;
+    display: inline-block;
     transition:
         color 0.25s ease,
         transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
@@ -1170,7 +1176,7 @@
 
 .project-row__link:hover .project-row__title {
     color: var(--vermillion);
-    transform: translateX(2px);
+    transform: rotate(-2deg) translateX(4px);
 }
 
 .project-row__meta {
