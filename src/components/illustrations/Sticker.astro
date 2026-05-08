@@ -1,0 +1,14 @@
+---
+interface Props {
+    rotate?: number | undefined;
+    tape?: 'top' | 'top-left' | 'top-right' | 'none' | undefined;
+    class?: string | undefined;
+}
+
+const { rotate = 0, tape = 'none', class: className = '' } = Astro.props;
+---
+
+<div class:list={['sticker', className]} style={`--sticker-rotate: ${rotate}deg`}>
+    {tape !== 'none' && <span class:list={['sticker__tape', `sticker__tape--${tape}`]} />}
+    <slot />
+</div>

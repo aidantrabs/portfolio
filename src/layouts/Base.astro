@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
+import IllustrationDefs from '../components/illustrations/IllustrationDefs.astro';
 
 interface Props {
     title?: string | undefined;
@@ -42,6 +43,7 @@ const { title, description, image, type, noindex } = Astro.props;
         </style>
     </head>
     <body>
+        <IllustrationDefs />
         <slot />
         <script>
             import '../lib/theme';

@@ -1,0 +1,33 @@
+---
+interface Props {
+    variant?: 'underline' | 'underline-rough' | 'circle' | 'slash' | 'star' | undefined;
+    class?: string | undefined;
+}
+
+const { variant = 'underline', class: className = '' } = Astro.props;
+
+const paths = {
+    underline:
+        'M2 8 Q 25 2, 50 7 T 98 5',
+    'underline-rough':
+        'M2 7 C 12 9, 18 4, 30 6 S 48 9, 60 5 S 80 9, 98 6',
+    circle:
+        'M50 5 C 78 5, 96 22, 84 36 S 50 50, 30 44 S 4 28, 16 14 S 38 4, 50 5 Z',
+    slash:
+        'M5 22 L 95 4',
+    star:
+        'M50 6 L 56 38 L 88 42 L 60 56 L 70 88 L 50 70 L 30 88 L 40 56 L 12 42 L 44 38 Z',
+};
+
+const viewBox = variant === 'circle' || variant === 'star' ? '0 0 100 60' : '0 0 100 24';
+---
+
+<svg
+    class:list={['tag-mark', `tag-mark--${variant}`, className]}
+    viewBox={viewBox}
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <path d={paths[variant]} />
+</svg>

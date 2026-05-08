@@ -1,0 +1,53 @@
+---
+---
+
+<svg class="illustration-defs" aria-hidden="true" focusable="false">
+    <defs>
+        <filter id="spray" x="-15%" y="-15%" width="130%" height="130%">
+            <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="7" />
+            <feDisplacementMap in="SourceGraphic" scale="2.2" />
+        </filter>
+
+        <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" />
+            <feDisplacementMap in="SourceGraphic" scale="1.2" />
+        </filter>
+
+        <filter id="neon-glow" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="2.4" result="b1" />
+            <feGaussianBlur stdDeviation="6" result="b2" />
+            <feMerge>
+                <feMergeNode in="b2" />
+                <feMergeNode in="b1" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <pattern id="halftone" width="5" height="5" patternUnits="userSpaceOnUse">
+            <circle cx="2.5" cy="2.5" r="0.9" fill="currentColor" />
+        </pattern>
+
+        <pattern id="halftone-dense" width="3" height="3" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="0.7" fill="currentColor" />
+        </pattern>
+
+        <pattern
+            id="diag-stripe"
+            width="6"
+            height="6"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+        >
+            <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="2" />
+        </pattern>
+    </defs>
+</svg>
+
+<style>
+    .illustration-defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+</style>
