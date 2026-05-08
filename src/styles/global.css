@@ -393,6 +393,117 @@
     animation: marquee 25s linear infinite;
 }
 
+.marquee-section {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+@media (min-width: 768px) {
+    .marquee-section {
+        padding: 2rem 0;
+    }
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 38s linear infinite;
+    width: max-content;
+    will-change: transform;
+}
+
+.marquee-track.is-paused {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    font-family: var(--font-graffiti);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1;
+    color: var(--text);
+    margin: 0 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.marquee-sep {
+    color: var(--accent);
+    margin: 0 0.2em;
+}
+
+.marquee-controls {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.65rem;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 4px 14px -8px color-mix(in srgb, var(--text) 18%, transparent);
+}
+
+.marquee-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: var(--text);
+    color: var(--bg-elevated);
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    cursor: pointer;
+}
+
+.marquee-toggle:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.marquee-toggle__icon--play {
+    display: none;
+}
+
+.marquee-toggle.is-paused .marquee-toggle__icon--play {
+    display: inline-flex;
+}
+
+.marquee-toggle.is-paused .marquee-toggle__icon--pause {
+    display: none;
+}
+
+.marquee-time {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+@media (max-width: 640px) {
+    .marquee-controls {
+        right: 16px;
+        padding: 0.3rem 0.5rem;
+        gap: 0.4rem;
+    }
+    .marquee-time {
+        display: none;
+    }
+}
+
 .about-statement {
     font-size: clamp(1.75rem, 4vw, 3rem);
     line-height: 1.3;
