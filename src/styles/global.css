@@ -1411,6 +1411,120 @@
     transform: translate(3px, -3px);
 }
 
+.section--contact {
+    padding-bottom: 4rem;
+}
+
+.contact__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.contact__status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+    animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+.contact__body {
+    max-width: 880px;
+}
+
+.contact__pitch {
+    font-family: var(--font-graffiti);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin: 0 0 2rem;
+    color: var(--text);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.contact__pitch-accent {
+    position: relative;
+    display: inline-block;
+    color: var(--accent);
+}
+
+.contact__underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.05em;
+    width: 100%;
+    height: 0.18em;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.contact__sub {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 0 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .contact__sub {
+        font-size: 19px;
+    }
+}
+
+.contact__cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.contact__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    background-color: var(--bg-elevated);
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact__cta:hover {
+    transform: translateY(-2px);
+    background-color: var(--text);
+    color: var(--bg-elevated);
+}
+
+.contact__cta--primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-elevated);
+}
+
+.contact__cta--primary:hover {
+    background-color: var(--text);
+    border-color: var(--text);
+    color: var(--bg-elevated);
+}
+
 @media (max-width: 767px) {
     .hero-scene-wrap {
         right: -10%;

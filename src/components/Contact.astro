@@ -1,0 +1,66 @@
+---
+import CircuitDoodle from './illustrations/CircuitDoodle.astro';
+import TagMark from './illustrations/TagMark.astro';
+---
+
+<section id="contact" class="section section--contact">
+    <div class="section__divider" aria-hidden="true">
+        <CircuitDoodle />
+    </div>
+
+    <div class="section__header">
+        <div class="section__heading">
+            <span class="section__num">05</span>
+            <h2 class="section__title">contact</h2>
+        </div>
+        <span class="contact__status">
+            <span class="contact__status-dot"></span>
+            <span>open to opportunities</span>
+        </span>
+    </div>
+
+    <div class="contact__body">
+        <p class="contact__pitch">
+            <span>let's build</span>
+            <span class="contact__pitch-accent">
+                <span>something</span>
+                <TagMark variant="underline-rough" class="contact__underline" />
+            </span>
+            <span>that ships.</span>
+        </p>
+
+        <p class="contact__sub">
+            i'm available for full-time and contract work in infrastructure, platform, and
+            full-stack roles. open to remote and on-site in trinidad and tobago, canada, and the
+            united states.
+        </p>
+
+        <div class="contact__cta-row">
+            <a
+                href="mailto:aidantraboulay@protonmail.com"
+                class="contact__cta contact__cta--primary"
+            >
+                <span>send a message</span>
+                <span aria-hidden="true">→</span>
+            </a>
+            <a
+                href="https://linkedin.com/in/aidan-traboulay"
+                target="_blank"
+                rel="noopener"
+                class="contact__cta"
+            >
+                <span>linkedin</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+            <a
+                href="https://github.com/aidantrabs"
+                target="_blank"
+                rel="noopener"
+                class="contact__cta"
+            >
+                <span>github</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </div>
+</section>
