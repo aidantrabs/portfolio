@@ -81,6 +81,8 @@
     isolation: isolate;
     scroll-behavior: smooth;
     contain: layout paint;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .dark .app-bounds {
@@ -1094,18 +1096,18 @@
 
 .section {
     position: relative;
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.25rem;
 }
 
 @media (min-width: 768px) {
     .section {
-        padding: 8rem 2.5rem;
+        padding: 7rem 2.5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .section {
-        padding: 9rem 3rem;
+        padding: 8rem 3rem;
     }
 }
 
@@ -1572,11 +1574,11 @@
 
 @media (max-width: 767px) {
     .hero-scene-wrap {
-        right: -8%;
-        bottom: 8%;
+        right: -10%;
+        bottom: 7%;
         transform: rotate(-4deg);
-        width: 80%;
-        opacity: 0.5;
+        width: 88%;
+        opacity: 0.32;
     }
 }
 
