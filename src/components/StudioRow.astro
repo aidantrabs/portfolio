@@ -1,0 +1,23 @@
+---
+interface Props {
+    index: number;
+    title: string;
+    tagline: string;
+    description: string;
+    url: string;
+}
+
+const { index, title, tagline, description, url } = Astro.props;
+const padded = String(index).padStart(2, '0');
+---
+
+<li class="studio-row">
+    <a href={url} target="_blank" rel="noopener" class="studio-row__link">
+        <span class="studio-row__bar" aria-hidden="true"></span>
+        <span class="studio-row__index">№ {padded}</span>
+        <span class="studio-row__meta">{tagline}</span>
+        <h3 class="studio-row__title">{title}</h3>
+        <p class="studio-row__desc">{description}</p>
+        <span class="studio-row__arrow" aria-hidden="true">↗</span>
+    </a>
+</li>

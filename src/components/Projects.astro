@@ -1,14 +1,23 @@
 ---
 import projects from '../content/projects.json';
+import studios from '../content/studios.json';
 import ProjectRow from './ProjectRow.astro';
+import StudioRow from './StudioRow.astro';
 
-const items = projects as Array<{
+const personalItems = projects as Array<{
     title: string;
     year: number;
     role: string;
     description: string;
     url: string;
     glyph: string;
+}>;
+
+const studioItems = studios as Array<{
+    title: string;
+    tagline: string;
+    description: string;
+    url: string;
 }>;
 ---
 
@@ -19,23 +28,49 @@ const items = projects as Array<{
             <h2 class="section__title" data-section-title>work</h2>
         </div>
         <span class="section__count">
-            {String(items.length).padStart(2, '0')}
+            {String(personalItems.length + studioItems.length).padStart(2, '0')}
             <span class="section__count-label">/ selected</span>
         </span>
     </div>
 
-    <ol class="projects-list">
-        {
-            items.map((project, i) => (
-                <ProjectRow
-                    index={i + 1}
-                    title={project.title}
-                    year={project.year}
-                    role={project.role}
-                    description={project.description}
-                    url={project.url}
-                />
-            ))
-        }
-    </ol>
+    <div class="work-group">
+        <div class="work-group__label">
+            <span>studios</span>
+            <span class="work-group__label-tick" aria-hidden="true"></span>
+        </div>
+        <ol class="studios-list">
+            {
+                studioItems.map((studio, i) => (
+                    <StudioRow
+                        index={i + 1}
+                        title={studio.title}
+                        tagline={studio.tagline}
+                        description={studio.description}
+                        url={studio.url}
+                    />
+                ))
+            }
+        </ol>
+    </div>
+
+    <div class="work-group">
+        <div class="work-group__label">
+            <span>personal projects</span>
+            <span class="work-group__label-tick" aria-hidden="true"></span>
+        </div>
+        <ol class="projects-list">
+            {
+                personalItems.map((project, i) => (
+                    <ProjectRow
+                        index={i + 1}
+                        title={project.title}
+                        year={project.year}
+                        role={project.role}
+                        description={project.description}
+                        url={project.url}
+                    />
+                ))
+            }
+        </ol>
+    </div>
 </section>
