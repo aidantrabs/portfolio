@@ -447,7 +447,7 @@
     display: inline-flex;
     align-items: baseline;
     gap: 0.4em;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--text);
@@ -472,7 +472,7 @@
 }
 
 .site-nav__brand-tag {
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -511,7 +511,7 @@
     display: inline-flex;
     align-items: baseline;
     gap: 0.5rem;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -525,7 +525,7 @@
 .site-nav__num {
     color: var(--accent);
     font-weight: 600;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .site-nav__link:hover {
@@ -579,7 +579,7 @@
     display: inline-flex;
     align-items: baseline;
     gap: 0.5em;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.22em;
@@ -603,7 +603,7 @@
 
 .loading-indicator__pct {
     color: var(--accent);
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .loading-indicator__bar {
@@ -665,7 +665,7 @@
 }
 
 .section__num {
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -683,7 +683,7 @@
 }
 
 .section__count {
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -781,7 +781,7 @@
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -806,7 +806,7 @@
 }
 
 .project-card__desc {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.55;
     color: var(--text-muted);
     margin: 0 0 1.5rem;
@@ -861,7 +861,7 @@
     padding: 0.55rem 1.25rem;
     border: 2px solid var(--text);
     border-radius: 999px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: lowercase;
@@ -898,7 +898,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -944,7 +944,7 @@
 }
 
 .post-list__index {
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.2em;
     color: var(--accent);
@@ -979,7 +979,7 @@
 }
 
 .post-list__desc {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--text-muted);
     line-height: 1.5;
     overflow: hidden;
@@ -989,7 +989,7 @@
 }
 
 .post-list__date {
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-muted);
     font-variant-numeric: tabular-nums;

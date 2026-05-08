@@ -2,7 +2,9 @@
 import HeroScene from './illustrations/HeroScene.astro';
 
 const META_LINK_CLASS =
-    'link-hover text-[11px] font-medium uppercase tracking-[0.15em] text-muted hover:text-theme';
+    'link-hover text-base font-medium uppercase tracking-[0.12em] text-muted hover:text-theme';
+const LABEL_CLASS =
+    'text-base font-semibold uppercase tracking-[0.18em] text-muted';
 ---
 
 <section id="top" class="relative h-screen-safe p-6 md:p-10 lg:p-12">
@@ -22,18 +24,16 @@ const META_LINK_CLASS =
 
     <div class="absolute bottom-6 left-6 right-6 md:hidden">
         <div class="mb-4">
-            <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted mb-1">
-                Say Hello
-            </p>
+            <p class:list={[LABEL_CLASS, 'mb-1']}>Say Hello</p>
             <a
                 href="mailto:aidantraboulay@protonmail.com"
-                class="link-hover text-[11px] font-medium hover:text-accent"
+                class="link-hover text-base font-medium hover:text-accent"
             >
                 aidantraboulay@protonmail.com
             </a>
         </div>
 
-        <div class="flex gap-4">
+        <div class="flex gap-4 flex-wrap">
             <a
                 href="https://github.com/aidantrabs"
                 target="_blank"
@@ -56,10 +56,10 @@ const META_LINK_CLASS =
     </div>
 
     <div class="absolute bottom-10 left-10 lg:bottom-12 lg:left-12 hidden md:block">
-        <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted mb-1">Say Hello</p>
+        <p class:list={[LABEL_CLASS, 'mb-1']}>Say Hello</p>
         <a
             href="mailto:aidantraboulay@protonmail.com"
-            class="link-hover text-[11px] font-medium hover:text-accent"
+            class="link-hover text-base font-medium hover:text-accent"
         >
             aidantraboulay@protonmail.com
         </a>
@@ -86,16 +86,16 @@ const META_LINK_CLASS =
         >
     </div>
 
-    <div class="absolute top-6 left-6 md:top-10 md:left-10 lg:top-12 lg:left-12 hidden md:block">
-        <p class="text-[9px] font-medium uppercase tracking-[0.2em] text-muted">
+    <div class="absolute top-24 left-10 md:top-28 md:left-10 lg:top-28 lg:left-12 hidden md:block">
+        <p class="text-base font-medium uppercase tracking-[0.18em] text-muted">
             <span class="text-accent">~7kb&nbsp;</span>gzip
         </p>
-        <p class="text-[9px] font-medium uppercase tracking-[0.2em] text-muted mt-1">
+        <p class="text-base font-medium uppercase tracking-[0.18em] text-muted mt-1">
             Cloudflare <span class="text-accent">/&nbsp;</span>edge
         </p>
     </div>
 
     <div class="absolute bottom-10 left-1/2 animate-scroll-hint hidden md:block">
-        <span class="text-[9px] font-medium uppercase tracking-[0.3em] text-muted">Scroll</span>
+        <span class="text-base font-medium uppercase tracking-[0.18em] text-muted">Scroll</span>
     </div>
 </section>
