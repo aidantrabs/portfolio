@@ -1,33 +1,34 @@
 ---
-import TagMark from './illustrations/TagMark.astro';
+import BrushStroke from './BrushStroke.astro';
+import HankoMark from './HankoMark.astro';
 ---
 
 <section id="contact" class="section section--contact">
     <div class="section__header">
         <div class="section__heading">
-            <span class="section__num">05</span>
-            <h2 class="section__title">contact</h2>
+            <span class="section__num" data-section-num>03</span>
+            <h2 class="section__title" data-section-title>contact</h2>
         </div>
         <span class="contact__status">
-            <span class="contact__status-dot"></span>
-            <span>open to opportunities</span>
+            <span class="contact__status-dot" aria-hidden="true"></span>
+            <span>open to work</span>
         </span>
     </div>
 
-    <div class="contact__body">
+    <div class="contact__body fade-in-up-target">
         <p class="contact__pitch">
             <span>let's build</span>
             <span class="contact__pitch-accent">
                 <span>something</span>
-                <TagMark variant="underline-rough" class="contact__underline" />
+                <BrushStroke class="contact__pitch-brush" />
             </span>
             <span>that ships.</span>
         </p>
 
         <p class="contact__sub">
-            i'm available for full-time and contract work in infrastructure, platform, and
-            full-stack roles. open to remote and on-site in trinidad and tobago, canada, and the
-            united states.
+            available for full-time and contract work in infrastructure, platform, and full-stack
+            roles. open to remote and on-site in trinidad and tobago, canada, and the united
+            states.
         </p>
 
         <div class="contact__cta-row">
@@ -56,6 +57,13 @@ import TagMark from './illustrations/TagMark.astro';
                 <span>github</span>
                 <span aria-hidden="true">↗</span>
             </a>
+        </div>
+
+        <div class="contact__signature">
+            <span class="contact__signature-hanko">
+                <HankoMark label="AT" size={56} />
+            </span>
+            <span>signed / aidan traboulay / 2026</span>
         </div>
     </div>
 </section>
