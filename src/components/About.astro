@@ -1,28 +1,9 @@
 ---
-import HankoMark from './HankoMark.astro';
-
-const FACTS = [
+const META = [
     { label: 'role', value: 'software engineer' },
-    { label: 'focus', value: 'infrastructure / sre' },
+    { label: 'focus', value: 'infra / sre / platform' },
     { label: 'based', value: 'trinidad and tobago' },
-    { label: 'work auth', value: 'tt / ca / us' },
     { label: 'status', value: 'open to work', accent: true },
-    { label: 'shipping since', value: '2019' },
-];
-
-const SKILLS = [
-    'typescript',
-    'go',
-    'python',
-    'rust',
-    'postgres',
-    'terraform',
-    'kubernetes',
-    'aws',
-    'cloudflare',
-    'react',
-    'astro',
-    'svelte',
 ];
 ---
 
@@ -32,63 +13,42 @@ const SKILLS = [
             <span class="section__num" data-section-num>01</span>
             <h2 class="section__title" data-section-title>about</h2>
         </div>
-        <span class="section__count">profile / .json</span>
     </div>
 
-    <div class="about-grid">
-        <div class="about-grid__copy fade-in-up-target">
-            <p class="about-statement">
-                software engineer building
-                <span class="about-statement__highlight">reliable, scalable infrastructure</span>
-                and shipping systems that perform under real world conditions.
-            </p>
+    <div class="about-prose fade-in-up-target">
+        <p class="about-statement">
+            software engineer building
+            <span class="about-statement__highlight">reliable, scalable infrastructure</span>
+            and shipping systems that perform under real world conditions.
+        </p>
 
-            <p class="about-bio">
-                authorized to work in trinidad and tobago, canada, and the united states. i combine
-                devops and sre practices with project leadership - translating requirements into
-                scalable systems and guiding delivery from architecture to production.
-            </p>
+        <p class="about-bio">
+            authorized to work in trinidad and tobago, canada, and the united states. i combine
+            devops and sre practices with project leadership - translating requirements into
+            scalable systems and guiding delivery from architecture to production.
+        </p>
 
-            <p class="about-bio">
-                most days you'll find me deep in postgres internals, pushing terraform changes, or
-                debugging the kind of edge cases that only show up at 3am.
-            </p>
-        </div>
-
-        <aside class="profile-card fade-in-up-target">
-            <div class="profile-card__head">
-                <span class="profile-card__head-title">profile</span>
-                <span class="profile-card__hanko">
-                    <HankoMark label="AT" size={44} />
-                </span>
-            </div>
-            <dl class="profile-card__body">
-                {
-                    FACTS.map((fact) => (
-                        <div class="profile-row">
-                            <dt class="profile-row__label">{fact.label}</dt>
-                            <dd
-                                class:list={[
-                                    'profile-row__value',
-                                    fact.accent && 'profile-row__value--accent',
-                                ]}
-                            >
-                                {fact.value}
-                            </dd>
-                        </div>
-                    ))
-                }
-            </dl>
-            <div class="profile-card__skills">
-                <span class="profile-card__skills-label">stack</span>
-                <ul class="profile-card__skills-list">
-                    {
-                        SKILLS.map((skill) => (
-                            <li class="profile-card__skill">{skill}</li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </aside>
+        <p class="about-bio">
+            most days you'll find me deep in postgres internals, pushing terraform changes, or
+            debugging the kind of edge cases that only show up at 3am.
+        </p>
     </div>
+
+    <dl class="about-meta fade-in-up-target">
+        {
+            META.map((item) => (
+                <div class="about-meta__item">
+                    <dt class="about-meta__label">{item.label}</dt>
+                    <dd
+                        class:list={[
+                            'about-meta__value',
+                            item.accent && 'about-meta__value--accent',
+                        ]}
+                    >
+                        {item.value}
+                    </dd>
+                </div>
+            ))
+        }
+    </dl>
 </section>
