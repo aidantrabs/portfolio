@@ -2,7 +2,6 @@
 
 @theme {
     --font-sans: "Inter", system-ui, sans-serif;
-    --font-display: "Carter One", system-ui, cursive;
     --font-graffiti: "Sedgwick Ave Display", cursive;
 }
 
@@ -782,7 +781,7 @@
 }
 
 .hero__data-value {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: clamp(18px, 1.6vw, 24px);
     color: var(--ink);
     font-weight: 500;
@@ -963,7 +962,7 @@
 }
 
 .about-statement {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: clamp(28px, 3.4vw, 44px);
     line-height: 1.32;
     color: var(--ink-strong);
@@ -1038,7 +1037,7 @@
 }
 
 .about-meta__value {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: clamp(18px, 1.6vw, 22px);
     font-weight: 500;
     color: var(--ink);
@@ -1370,7 +1369,7 @@
 }
 
 .contact__lede {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: clamp(22px, 2.4vw, 30px);
     line-height: 1.45;
     color: var(--ink-strong);
@@ -1461,7 +1460,7 @@
 }
 
 .contact__aside-value {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: clamp(18px, 1.6vw, 22px);
     font-weight: 500;
     color: var(--ink);
