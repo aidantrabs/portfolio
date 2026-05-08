@@ -15,11 +15,11 @@ const items = projects as Array<{
 <section id="work" class="section section--projects">
     <div class="section__header">
         <div class="section__heading">
-            <span class="section__num">02</span>
-            <h2 class="section__title">work</h2>
+            <span class="section__num" data-section-num>02</span>
+            <h2 class="section__title" data-section-title>work</h2>
         </div>
         <span class="section__count">
-            {items.length}
+            {String(items.length).padStart(2, '0')}
             <span class="section__count-label">/ selected</span>
         </span>
     </div>
