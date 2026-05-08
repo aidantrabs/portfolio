@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 
-const url = process.env.URL || 'http://localhost:4321/';
+const url = process.env.URL || 'http://localhost:5050/';
 const outDir = process.env.OUT || './screenshots';
 mkdirSync(outDir, { recursive: true });
 
@@ -16,20 +16,32 @@ const browser = await chromium.launch();
 for (const size of sizes) {
     const ctx = await browser.newContext({
         viewport: { width: size.width, height: size.height },
-        deviceScaleFactor: 2,
+        deviceScaleFactor: 1,
     });
     const page = await ctx.newPage();
     await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     await page.waitForTimeout(2500);
 
-    await page.screenshot({
-        path: `${outDir}/${size.name}-hero.png`,
-        fullPage: false,
+    const totalScroll = await page.evaluate(() => {
+        const el = document.querySelector('.app-bounds');
+        if (!el) return 0;
+        return el.scrollHeight - el.clientHeight;
     });
-    await page.screenshot({
-        path: `${outDir}/${size.name}-full.png`,
-        fullPage: true,
-    });
+
+    const steps = Math.max(1, Math.ceil(totalScroll / 800));
+
+    for (let i = 0; i <= steps; i++) {
+        const y = Math.min(totalScroll, i * 800);
+        await page.evaluate((scrollY) => {
+            const el = document.querySelector('.app-bounds');
+            if (el) el.scrollTop = scrollY;
+        }, y);
+        await page.waitForTimeout(500);
+        await page.screenshot({
+            path: `${outDir}/${size.name}-${String(i).padStart(2, '0')}.png`,
+            fullPage: false,
+        });
+    }
 
     await ctx.close();
 }
