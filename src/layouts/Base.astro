@@ -5,6 +5,9 @@ import IllustrationDefs from '../components/illustrations/IllustrationDefs.astro
 import LoadingIndicator from '../components/LoadingIndicator.astro';
 import AppShell from '../components/AppShell.astro';
 import OuterFrame from '../components/OuterFrame.astro';
+import SideRail from '../components/SideRail.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
+import CursorInk from '../components/CursorInk.astro';
 
 interface Props {
     title?: string | undefined;
@@ -32,25 +35,25 @@ const { title, description, image, type, noindex } = Astro.props;
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Sedgwick+Ave+Display&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Sedgwick+Ave+Display&family=Shippori+Mincho:wght@500;600;700;800&display=swap"
             rel="stylesheet"
         />
     </head>
     <body>
+        <div class="paper-grain" aria-hidden="true"></div>
         <LoadingIndicator />
         <IllustrationDefs />
         <OuterFrame />
+        <ScrollProgress />
+        <SideRail />
+        <CursorInk />
         <main class="app-bounds">
             <AppShell />
             <slot />
         </main>
         <script>
-            import '../lib/loading';
-            import '../lib/theme';
             import '../lib/scroll';
-            import '../lib/scroll-reveal';
-            import '../lib/scroll-progress';
-            import '../lib/marquee';
+            import '../lib/init';
         </script>
     </body>
 </html>
