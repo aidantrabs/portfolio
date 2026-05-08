@@ -1,3 +1,5 @@
+export {};
+
 const track = document.querySelector<HTMLElement>('[data-marquee-track]');
 const toggle = document.querySelector<HTMLButtonElement>('[data-marquee-toggle]');
 const timeEl = document.querySelector<HTMLElement>('[data-marquee-time]');

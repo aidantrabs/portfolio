@@ -4,6 +4,7 @@ import Seo from '../components/Seo.astro';
 import IllustrationDefs from '../components/illustrations/IllustrationDefs.astro';
 import LoadingIndicator from '../components/LoadingIndicator.astro';
 import AppShell from '../components/AppShell.astro';
+import OuterFrame from '../components/OuterFrame.astro';
 
 interface Props {
     title?: string | undefined;
@@ -38,6 +39,7 @@ const { title, description, image, type, noindex } = Astro.props;
     <body>
         <LoadingIndicator />
         <IllustrationDefs />
+        <OuterFrame />
         <main class="app-bounds">
             <AppShell />
             <slot />
@@ -47,6 +49,7 @@ const { title, description, image, type, noindex } = Astro.props;
             import '../lib/theme';
             import '../lib/scroll';
             import '../lib/scroll-reveal';
+            import '../lib/scroll-progress';
             import '../lib/marquee';
         </script>
     </body>

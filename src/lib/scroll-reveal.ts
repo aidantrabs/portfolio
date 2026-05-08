@@ -1,3 +1,5 @@
+export {};
+
 const root = document.querySelector<HTMLElement>('.app-bounds');
 
 const observerOptions: IntersectionObserverInit = {

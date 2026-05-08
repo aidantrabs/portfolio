@@ -1,3 +1,5 @@
+export {};
+
 const bounds = document.querySelector<HTMLElement>('.app-bounds');
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 const scrollBehavior: ScrollBehavior = isMobile ? 'auto' : 'smooth';

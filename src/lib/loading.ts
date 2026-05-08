@@ -1,3 +1,5 @@
+export {};
+
 const indicator = document.querySelector<HTMLElement>('.loading-indicator');
 const counter = document.querySelector<HTMLElement>('.loading-indicator__count');
 const fill = document.querySelector<HTMLElement>('.loading-indicator__bar-fill');

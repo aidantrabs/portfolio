@@ -71,11 +71,11 @@
 
 .app-bounds {
     position: fixed;
-    inset: 12px;
+    inset: 14px;
     overflow-y: auto;
     overflow-x: hidden;
     border: 1.5px solid color-mix(in srgb, var(--text) 32%, transparent);
-    border-radius: 18px;
+    border-radius: 16px;
     background-color: var(--bg);
     transform: translateZ(0);
     isolation: isolate;
@@ -91,7 +91,7 @@
 
 @media (min-width: 768px) {
     .app-bounds {
-        inset: 16px;
+        inset: 28px;
         border-radius: 22px;
         border-width: 1.5px;
     }
@@ -694,6 +694,139 @@
 .app-shell__scroll-indicator,
 .app-shell__handle {
     display: none;
+}
+
+.app-shell__socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-shell__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    box-shadow: 0 4px 12px -8px color-mix(in srgb, var(--text) 18%, transparent);
+}
+
+.app-shell__pill:hover {
+    background-color: var(--text);
+    color: var(--bg-elevated);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    .app-shell__pill {
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+.outer-frame {
+    position: fixed;
+    inset: 0;
+    z-index: 22;
+    pointer-events: none;
+    color: var(--text-muted);
+}
+
+.outer-frame__top-right {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 767px) {
+    .outer-frame__top-right {
+        font-size: 16px;
+        top: 0;
+        right: 18px;
+    }
+}
+
+.outer-frame__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid var(--text-muted);
+}
+
+.outer-frame__dot--on {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.outer-frame__label {
+    margin-left: 0.2rem;
+}
+
+.outer-frame__scrollbar {
+    display: none;
+    position: absolute;
+    top: 28px;
+    right: 11px;
+    bottom: 28px;
+    width: 6px;
+}
+
+@media (min-width: 768px) {
+    .outer-frame__scrollbar {
+        display: block;
+        right: 13px;
+    }
+}
+
+.outer-frame__scroll-track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: color-mix(in srgb, var(--text) 22%, transparent);
+}
+
+.outer-frame__scroll-thumb {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background-color: var(--bg);
+    border: 1.5px solid color-mix(in srgb, var(--text) 32%, transparent);
+    top: 0;
+    transition: top 0.08s linear;
+}
+
+.outer-frame__scroll-thumb::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--accent);
 }
 
 .sticker {
