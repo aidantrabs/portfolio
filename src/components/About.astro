@@ -1,28 +1,45 @@
 ---
+import HankoMark from './HankoMark.astro';
+
 const FACTS = [
     { label: 'role', value: 'software engineer' },
     { label: 'focus', value: 'infrastructure / sre' },
     { label: 'based', value: 'trinidad and tobago' },
     { label: 'work auth', value: 'tt / ca / us' },
-    { label: 'status', value: 'open to opportunities', accent: true },
+    { label: 'status', value: 'open to work', accent: true },
     { label: 'shipping since', value: '2019' },
+];
+
+const SKILLS = [
+    'typescript',
+    'go',
+    'python',
+    'rust',
+    'postgres',
+    'terraform',
+    'kubernetes',
+    'aws',
+    'cloudflare',
+    'react',
+    'astro',
+    'svelte',
 ];
 ---
 
 <section id="about" class="section section--about">
     <div class="section__header">
         <div class="section__heading">
-            <span class="section__num">01</span>
-            <h2 class="section__title">about</h2>
+            <span class="section__num" data-section-num>01</span>
+            <h2 class="section__title" data-section-title>about</h2>
         </div>
-        <span class="section__count">profile</span>
+        <span class="section__count">profile / .json</span>
     </div>
 
     <div class="about-grid">
-        <div class="about-grid__copy animate-fade-in-up">
+        <div class="about-grid__copy fade-in-up-target">
             <p class="about-statement">
                 software engineer building
-                <span class="text-accent"> reliable, scalable infrastructure</span>
+                <span class="about-statement__highlight">reliable, scalable infrastructure</span>
                 and shipping systems that perform under real world conditions.
             </p>
 
@@ -38,14 +55,12 @@ const FACTS = [
             </p>
         </div>
 
-        <aside class="profile-card animate-fade-in-up animation-delay-200">
-            <div class="profile-card__bar">
-                <span class="profile-card__dots" aria-hidden="true">
-                    <span class="profile-card__dot"></span>
-                    <span class="profile-card__dot"></span>
-                    <span class="profile-card__dot"></span>
+        <aside class="profile-card fade-in-up-target">
+            <div class="profile-card__head">
+                <span class="profile-card__head-title">profile</span>
+                <span class="profile-card__hanko">
+                    <HankoMark label="AT" size={44} />
                 </span>
-                <span class="profile-card__title">profile.json</span>
             </div>
             <dl class="profile-card__body">
                 {
@@ -64,6 +79,16 @@ const FACTS = [
                     ))
                 }
             </dl>
+            <div class="profile-card__skills">
+                <span class="profile-card__skills-label">stack</span>
+                <ul class="profile-card__skills-list">
+                    {
+                        SKILLS.map((skill) => (
+                            <li class="profile-card__skill">{skill}</li>
+                        ))
+                    }
+                </ul>
+            </div>
         </aside>
     </div>
 </section>
