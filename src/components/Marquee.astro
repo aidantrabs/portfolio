@@ -1,0 +1,15 @@
+---
+const REPEAT_COUNT = 16;
+---
+
+<section class="border-y border-accent/20 py-6 md:py-8 overflow-hidden">
+    <div class="flex animate-marquee whitespace-nowrap">
+        {
+            Array.from({ length: REPEAT_COUNT }).map(() => (
+                <span class="text-[24px] md:text-[32px] font-medium uppercase tracking-[0.15em] mx-8">
+                    Let's Talk <span class="text-accent">/</span>
+                </span>
+            ))
+        }
+    </div>
+</section>

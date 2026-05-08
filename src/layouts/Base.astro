@@ -44,7 +44,11 @@ const { title, description, image, type, noindex } = Astro.props;
     <body>
         <slot />
         <script>
-            import '../main.ts';
+            import '../lib/theme';
+            import '../lib/scroll';
+            import '../lib/scroll-reveal';
+
+            document.fonts.ready.then(() => document.body.classList.add('loaded'));
         </script>
     </body>
 </html>
