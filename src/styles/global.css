@@ -86,52 +86,6 @@
     letter-spacing: -0.02em;
     transform: rotate(-4deg);
     text-align: center;
-    text-shadow:
-        -1.5px 0 0 rgba(0, 220, 255, 0.45),
-        1.5px 0 0 rgba(255, 60, 60, 0.45);
-    animation: chroma-pulse 5s ease-in-out infinite;
-    will-change: text-shadow;
-}
-
-.dark .graffiti-name {
-    text-shadow:
-        -1.5px 0 0 rgba(0, 200, 255, 0.55),
-        1.5px 0 0 rgba(255, 80, 80, 0.55);
-}
-
-@keyframes chroma-pulse {
-    0%,
-    100% {
-        text-shadow:
-            -1.5px 0 0 rgba(0, 220, 255, 0.45),
-            1.5px 0 0 rgba(255, 60, 60, 0.45);
-    }
-    45% {
-        text-shadow:
-            -2.6px 0 0 rgba(0, 220, 255, 0.55),
-            2.6px 0 0 rgba(255, 60, 60, 0.55);
-    }
-    47% {
-        text-shadow:
-            -1px 0 0 rgba(0, 220, 255, 0.4),
-            1px 0 0 rgba(255, 60, 60, 0.4);
-    }
-    49% {
-        text-shadow:
-            -3.4px 0 0 rgba(0, 220, 255, 0.6),
-            3.4px 0 0 rgba(255, 60, 60, 0.6);
-    }
-    51% {
-        text-shadow:
-            -1.5px 0 0 rgba(0, 220, 255, 0.45),
-            1.5px 0 0 rgba(255, 60, 60, 0.45);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .graffiti-name {
-        animation: none;
-    }
 }
 
 .graffiti-bg {
@@ -245,28 +199,28 @@
     position: absolute;
     left: 0;
     right: 0;
-    height: 220px;
+    height: 280px;
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        color-mix(in srgb, var(--accent) 0%, transparent) 30%,
-        color-mix(in srgb, var(--accent) 12%, transparent) 50%,
-        color-mix(in srgb, var(--accent) 0%, transparent) 70%,
+        color-mix(in srgb, var(--accent) 0%, transparent) 35%,
+        color-mix(in srgb, var(--accent) 5%, transparent) 50%,
+        color-mix(in srgb, var(--accent) 0%, transparent) 65%,
         transparent 100%
     );
-    animation: scan-sweep 8s linear infinite;
-    will-change: transform, top;
+    animation: scan-sweep 14s linear infinite;
+    will-change: top;
     mix-blend-mode: screen;
-    opacity: 0.6;
+    opacity: 0.35;
 }
 
 .dark .scanlines__sweep {
-    opacity: 0.45;
+    opacity: 0.25;
 }
 
 @keyframes scan-sweep {
     0% {
-        top: -220px;
+        top: -280px;
     }
     100% {
         top: 100%;
@@ -797,44 +751,9 @@
     opacity: 0.6;
 }
 
-.app-shell__scroll-indicator {
+.app-shell__scroll-indicator,
+.app-shell__handle {
     display: none;
-    position: fixed;
-    top: 50%;
-    right: 18px;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 80px;
-    z-index: 35;
-}
-
-@media (min-width: 1024px) {
-    .app-shell__scroll-indicator {
-        display: block;
-    }
-}
-
-.app-shell__scroll-track {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    background-color: var(--border);
-}
-
-.app-shell__scroll-thumb {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    top: var(--scroll-progress, 0%);
-    transition: top 0.15s linear;
-    box-shadow: 0 0 6px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
 .sticker {
@@ -1178,16 +1097,6 @@
     }
 }
 
-.section__divider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    color: var(--accent);
-    transform: translateY(-30px);
-}
-
 .section__header {
     display: flex;
     align-items: flex-end;
@@ -1260,14 +1169,6 @@
     }
 }
 
-.projects-grid__item:nth-child(odd) .project-card {
-    transform: rotate(-0.4deg);
-}
-
-.projects-grid__item:nth-child(even) .project-card {
-    transform: rotate(0.5deg);
-}
-
 .project-card {
     position: relative;
     display: flex;
@@ -1287,9 +1188,9 @@
 }
 
 .project-card:hover {
-    transform: translateY(-4px) rotate(0deg);
+    transform: translateY(-3px);
     border-color: var(--accent);
-    box-shadow: 0 12px 40px -16px color-mix(in srgb, var(--accent) 40%, transparent);
+    box-shadow: 0 12px 32px -16px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
 .project-card::before {
@@ -1368,13 +1269,13 @@
 
 .skills-marquee {
     overflow: hidden;
-    margin: 0.6rem -1.5rem;
+    margin: 1rem -1.5rem 0;
     padding: 0.6rem 0;
 }
 
 @media (min-width: 768px) {
     .skills-marquee {
-        margin: 0.8rem -2.5rem;
+        margin: 1.5rem -2.5rem 0;
     }
 }
 
@@ -1382,50 +1283,32 @@
     display: inline-flex;
     gap: 0.75rem;
     white-space: nowrap;
-    animation: marquee 40s linear infinite;
+    animation: marquee 50s linear infinite;
     width: max-content;
     will-change: transform;
-}
-
-.skills-marquee--row1 .skills-marquee__track {
-    animation-duration: 45s;
-}
-
-.skills-marquee--row2 .skills-marquee__track {
-    animation-direction: reverse;
-    animation-duration: 55s;
 }
 
 .skill-chip {
     display: inline-flex;
     align-items: center;
     padding: 0.55rem 1.25rem;
-    border: 2px solid var(--text);
+    border: 1.5px solid var(--border);
     border-radius: 999px;
     font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     text-transform: lowercase;
     background-color: var(--bg-elevated);
     color: var(--text);
-    transform: rotate(-1deg);
     flex-shrink: 0;
     transition:
-        transform 0.3s ease,
         background-color 0.25s ease,
-        color 0.25s ease;
-}
-
-.skill-chip:nth-child(even) {
-    transform: rotate(1.2deg);
-}
-
-.skill-chip:nth-child(3n) {
-    transform: rotate(-2deg);
+        color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .skill-chip--alt {
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
     color: var(--accent);
 }
 

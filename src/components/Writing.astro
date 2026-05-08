@@ -1,15 +1,10 @@
 ---
-import CircuitDoodle from './illustrations/CircuitDoodle.astro';
 import { fetchRecentPosts, formatPostDate } from '../lib/rss';
 
 const posts = await fetchRecentPosts(5);
 ---
 
 <section id="writing" class="section section--writing">
-    <div class="section__divider" aria-hidden="true">
-        <CircuitDoodle />
-    </div>
-
     <div class="section__header">
         <div class="section__heading">
             <span class="section__num">04</span>

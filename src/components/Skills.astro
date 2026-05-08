@@ -1,64 +1,43 @@
 ---
-import CircuitDoodle from './illustrations/CircuitDoodle.astro';
-
-const LANGS = [
+const STACK = [
     'TypeScript',
     'Go',
     'Python',
     'Rust',
-    'Lua',
+    'Postgres',
     'React',
-    'Svelte',
     'Astro',
     'Tailwind',
-    'GraphQL',
-    'Node',
-];
-const INFRA = [
-    'Postgres',
-    'Redis',
     'Terraform',
     'Docker',
     'Kubernetes',
     'Linux',
     'AWS',
-    'GCP',
     'Cloudflare',
     'Bun',
     'Nginx',
-    'Vault',
+    'Redis',
+    'GraphQL',
 ];
 
-const row1 = [...LANGS, ...LANGS];
-const row2 = [...INFRA, ...INFRA];
-const total = LANGS.length + INFRA.length;
+const track = [...STACK, ...STACK];
 ---
 
 <section id="skills" class="section section--skills">
-    <div class="section__divider" aria-hidden="true">
-        <CircuitDoodle />
-    </div>
-
     <div class="section__header">
         <div class="section__heading">
             <span class="section__num">03</span>
             <h2 class="section__title">stack</h2>
         </div>
         <span class="section__count">
-            {total}
+            {STACK.length}
             <span class="section__count-label">tools</span>
         </span>
     </div>
 
-    <div class="skills-marquee skills-marquee--row1" aria-hidden="true">
+    <div class="skills-marquee" aria-hidden="true">
         <div class="skills-marquee__track">
-            {row1.map((s) => <span class="skill-chip">{s}</span>)}
-        </div>
-    </div>
-
-    <div class="skills-marquee skills-marquee--row2" aria-hidden="true">
-        <div class="skills-marquee__track">
-            {row2.map((s) => <span class="skill-chip skill-chip--alt">{s}</span>)}
+            {track.map((s) => <span class="skill-chip">{s}</span>)}
         </div>
     </div>
 </section>
