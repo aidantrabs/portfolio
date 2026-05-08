@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string;
+    class?: string | undefined;
+    rotate?: number | undefined;
+    width?: string | undefined;
+}
+
+const { title, class: className = '', rotate = 0, width } = Astro.props;
+const style = [
+    rotate ? `transform: rotate(${rotate}deg);` : '',
+    width ? `width: ${width};` : '',
+]
+    .filter(Boolean)
+    .join(' ');
+---
+
+<div class:list={['window-panel', className]} style={style}>
+    <div class="window-panel__bar">
+        <span class="window-panel__title">{title}</span>
+        <span class="window-panel__close" aria-hidden="true">×</span>
+    </div>
+    <div class="window-panel__body">
+        <slot />
+    </div>
+</div>
