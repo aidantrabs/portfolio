@@ -74,8 +74,8 @@
     inset: 14px;
     overflow-y: auto;
     overflow-x: hidden;
-    border: 1.5px solid color-mix(in srgb, var(--text) 32%, transparent);
-    border-radius: 16px;
+    border: 1.5px solid color-mix(in srgb, var(--text) 36%, transparent);
+    border-radius: 2px;
     background-color: var(--bg);
     transform: translateZ(0);
     isolation: isolate;
@@ -86,13 +86,13 @@
 }
 
 .dark .app-bounds {
-    border-color: color-mix(in srgb, var(--text) 28%, transparent);
+    border-color: color-mix(in srgb, var(--text) 30%, transparent);
 }
 
 @media (min-width: 768px) {
     .app-bounds {
         inset: 28px;
-        border-radius: 22px;
+        border-radius: 2px;
         border-width: 1.5px;
     }
 }
