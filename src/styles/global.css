@@ -498,6 +498,32 @@
     opacity: 1;
 }
 
+.hero__signature {
+    position: absolute;
+    right: -2%;
+    bottom: -4%;
+    width: clamp(180px, 22vw, 320px);
+    color: var(--ink);
+    opacity: 0.92;
+    pointer-events: none;
+    z-index: 0;
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .hero__signature {
+        display: block;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero__signature {
+        right: 2%;
+        bottom: 2%;
+        width: clamp(260px, 24vw, 360px);
+    }
+}
+
 .hero-scene__stage {
     position: absolute;
     inset: 0;
