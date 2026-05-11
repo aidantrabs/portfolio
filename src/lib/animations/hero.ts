@@ -41,11 +41,6 @@ function introHero() {
         '-=0.55',
     );
 
-    tl.from(
-        '[data-hero-note]',
-        { opacity: 0, x: 16, duration: 0.6, ease: 'power2.out' },
-        '-=0.45',
-    );
 
     tl.from(
         '[data-hero-bottombar] .hero__data',
