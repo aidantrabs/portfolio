@@ -26,8 +26,6 @@ dist-ssr
 
 .env
 .vercel
-screenshots/
 
-# screenshots
+# screenshot output (script lives in /scripts and is tracked)
 screenshots/
-scripts/screenshot*

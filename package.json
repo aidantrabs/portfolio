@@ -10,7 +10,9 @@
         "astro": "astro",
         "lint": "biome lint .",
         "format": "biome format --write .",
-        "check": "biome check --write ."
+        "check": "biome check --write .",
+        "screenshot": "node scripts/screenshot.mjs",
+        "screenshot:ref": "node scripts/screenshot-ref.mjs"
     },
     "devDependencies": {
         "@astrojs/check": "^0.9.9",
