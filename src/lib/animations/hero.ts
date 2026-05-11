@@ -11,13 +11,35 @@ function introHero() {
 
     const tl = gsap.timeline({ delay: 0.1 });
 
-    tl.from('.hero-scene__layer--front', {
+    tl.from('[data-hero-topline]', {
         opacity: 0,
-        y: 24,
-        scale: 0.96,
-        duration: 0.95,
-        ease: 'power3.out',
+        y: 8,
+        duration: 0.6,
+        ease: 'power2.out',
     });
+
+    tl.from(
+        '.hero-scene__layer--front',
+        {
+            opacity: 0,
+            y: 24,
+            scale: 0.96,
+            duration: 0.95,
+            ease: 'power3.out',
+        },
+        '-=0.3',
+    );
+
+    tl.from(
+        '[data-hero-tagline]',
+        {
+            opacity: 0,
+            y: 14,
+            duration: 0.7,
+            ease: 'power3.out',
+        },
+        '-=0.55',
+    );
 
     tl.from(
         '[data-hero-bottombar] .hero__data',

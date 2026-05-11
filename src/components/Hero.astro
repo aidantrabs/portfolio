@@ -1,14 +1,29 @@
 ---
+import InkMark from './illustrations/InkMark.astro';
 ---
 
 <section id="top" class="hero">
     <div class="hero__display" data-hero-display>
         <div class="hero-scene" data-hero-scene>
+            <canvas
+                class="hero-scene__canvas"
+                data-hero-canvas
+                aria-hidden="true"
+            ></canvas>
             <div class="hero-scene__stage" data-hero-stage>
+                <div class="hero__topline" data-hero-topline>
+                    <InkMark kind="tick" size={14} class="hero__topline-tick" />
+                    <span class="hero__eyebrow">portfolio 26 · infra · sre · platform</span>
+                </div>
+
                 <h1 class="hero-scene__layer hero-scene__layer--front">
                     <span class="hero-scene__line">aidan<span class="hero-scene__dot">.</span></span>
                     <span class="hero-scene__line">traboulay</span>
                 </h1>
+
+                <p class="hero__tagline" data-hero-tagline>
+                    software engineer building <span class="ink-underline">reliable</span> infrastructure for the <span class="ink-underline">real world</span>.
+                </p>
             </div>
         </div>
     </div>
