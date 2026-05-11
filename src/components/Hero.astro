@@ -19,7 +19,7 @@ import SignatureRack from './illustrations/SignatureRack.astro';
                 </div>
 
                 <h1 class="hero-scene__layer hero-scene__layer--front">
-                    <span class="hero-scene__line">aidan<span class="hero-scene__dot">.</span></span>
+                    <span class="hero-scene__line">aidan<span class="hero-scene__dot">.<InkMark kind="drip" class="hero__dot-drip" /></span></span>
                     <span class="hero-scene__line">traboulay</span>
                 </h1>
 
@@ -27,6 +27,11 @@ import SignatureRack from './illustrations/SignatureRack.astro';
                     software engineer building <span class="ink-underline">reliable</span> infrastructure for the <span class="ink-underline">real world</span>.
                 </p>
             </div>
+
+            <aside class="hero__note" data-hero-note aria-hidden="true">
+                <InkMark kind="aster" size={14} class="hero__note-aster" />
+                <span class="hero__note-text">currently experimenting with postgres &amp; rust</span>
+            </aside>
         </div>
     </div>
 
