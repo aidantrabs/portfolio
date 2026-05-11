@@ -7,9 +7,21 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/astro-%23BC52EE.svg?style=flat&logo=astro&logoColor=white" alt="Astro">
   <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
+  <img src="https://img.shields.io/badge/cloudflare-%23F38020.svg?style=flat&logo=cloudflare&logoColor=white" alt="Cloudflare Pages">
 </p>
 
 <p align="center">personal portfolio.</p>
+
+## Deploy
+
+Auto-deploys to Cloudflare Pages on every push to `main` via GitHub Actions (`.github/workflows/ci.yml`).
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN` - Pages:Edit scope
+- `CLOUDFLARE_ACCOUNT_ID`
+
+Project name: `aidantraboulay-portfolio`.
