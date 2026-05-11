@@ -1,0 +1,72 @@
+---
+type InkKind =
+    | 'tick'
+    | 'aster'
+    | 'arrow'
+    | 'bracket-l'
+    | 'bracket-r'
+    | 'underline'
+    | 'circle'
+    | 'drip'
+    | 'scribble';
+
+interface Props {
+    kind: InkKind;
+    class?: string | undefined;
+    size?: number | string | undefined;
+    width?: number | string | undefined;
+    height?: number | string | undefined;
+    label?: string | undefined;
+}
+
+const {
+    kind,
+    class: className = '',
+    size,
+    width,
+    height,
+    label,
+} = Astro.props;
+
+const viewBoxes: Record<InkKind, string> = {
+    tick: '0 0 16 16',
+    aster: '0 0 16 16',
+    arrow: '0 0 32 16',
+    'bracket-l': '0 0 8 24',
+    'bracket-r': '0 0 8 24',
+    underline: '0 0 100 12',
+    circle: '0 0 80 48',
+    drip: '0 0 12 22',
+    scribble: '0 0 6 100',
+};
+
+const resolvedWidth = width ?? size;
+const resolvedHeight = height ?? size;
+const preserveAspectRatio =
+    kind === 'underline' || kind === 'scribble' ? 'none' : undefined;
+const ariaHidden = label ? undefined : 'true';
+const role = label ? 'img' : undefined;
+---
+
+<svg
+    class:list={['ink-mark', `ink-mark--${kind}`, className]}
+    viewBox={viewBoxes[kind]}
+    width={resolvedWidth}
+    height={resolvedHeight}
+    preserveAspectRatio={preserveAspectRatio}
+    aria-hidden={ariaHidden}
+    aria-label={label}
+    role={role}
+    focusable="false"
+>
+    <use href={`#ink-${kind}`} />
+</svg>
+
+<style>
+    .ink-mark {
+        display: inline-block;
+        vertical-align: middle;
+        color: inherit;
+        overflow: visible;
+    }
+</style>
