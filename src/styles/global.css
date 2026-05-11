@@ -498,20 +498,19 @@
     opacity: 1;
 }
 
-.hero__signature {
+.hero__mark {
     display: none;
 }
 
 @media (min-width: 900px) {
-    .hero__signature {
+    .hero__mark {
         display: block;
         position: absolute;
-        right: -1%;
+        right: 4%;
         bottom: -2%;
-        width: clamp(200px, 22vw, 300px);
+        width: clamp(160px, 18vw, 240px);
         height: auto;
         color: var(--ink);
-        opacity: 0.9;
         pointer-events: none;
         z-index: 0;
         overflow: visible;
@@ -519,10 +518,10 @@
 }
 
 @media (min-width: 1280px) {
-    .hero__signature {
-        right: 2%;
-        bottom: 2%;
-        width: clamp(240px, 22vw, 320px);
+    .hero__mark {
+        right: 6%;
+        bottom: -1%;
+        width: clamp(200px, 18vw, 280px);
     }
 }
 

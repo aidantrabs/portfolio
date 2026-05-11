@@ -1,0 +1,126 @@
+---
+interface Props {
+    class?: string | undefined;
+    variant?: 'hero' | 'silhouette' | 'icon' | undefined;
+}
+const { class: className = '', variant = 'hero' } = Astro.props;
+---
+
+{variant === 'hero' && (
+<svg
+    class:list={['mark', `mark--${variant}`, className]}
+    viewBox="0 0 280 280"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <ellipse cx="140" cy="262" rx="74" ry="6" fill="currentColor" opacity="0.16" />
+
+        <path
+            d="M 70 152 C 64 116, 80 80, 116 64 C 152 50, 196 54, 220 80 C 244 106, 240 152, 222 184 C 214 200, 200 218, 196 240 C 192 254, 180 260, 168 256 C 158 254, 148 256, 138 254 C 128 256, 118 254, 110 256 C 96 260, 84 254, 80 240 C 76 220, 70 200, 70 184 C 70 174, 70 162, 70 152 Z"
+            fill="var(--accent-emphasis)"
+        />
+        <path
+            d="M 70 152 C 64 116, 80 80, 116 64 C 152 50, 196 54, 220 80 C 244 106, 240 152, 222 184 C 214 200, 200 218, 196 240 C 192 254, 180 260, 168 256 C 158 254, 148 256, 138 254 C 128 256, 118 254, 110 256 C 96 260, 84 254, 80 240 C 76 220, 70 200, 70 184 C 70 174, 70 162, 70 152 Z"
+            fill="url(#halftone)"
+            color="rgba(0,0,0,1)"
+            opacity="0.28"
+        />
+        <path
+            d="M 70 152 C 64 116, 80 80, 116 64 C 152 50, 196 54, 220 80 C 244 106, 240 152, 222 184 C 214 200, 200 218, 196 240 C 192 254, 180 260, 168 256 C 158 254, 148 256, 138 254 C 128 256, 118 254, 110 256 C 96 260, 84 254, 80 240 C 76 220, 70 200, 70 184 C 70 174, 70 162, 70 152 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M 108 138 L 124 138"
+            stroke="currentColor"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            fill="none"
+        />
+        <circle cx="172" cy="140" r="4.5" fill="currentColor" />
+        <circle cx="173.6" cy="138.6" r="1.2" fill="var(--bg)" />
+
+        <path
+            d="M 128 176 C 134 190, 162 190, 168 176 C 162 182, 134 182, 128 176 Z"
+            fill="#a8281a"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M 138 184 C 142 192, 150 192, 152 188 C 152 194, 144 196, 138 184 Z"
+            fill="#ffb8a8"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+        />
+
+        <circle cx="98" cy="172" r="9" fill="#ff8a76" opacity="0.5" />
+        <circle cx="196" cy="172" r="9" fill="#ff8a76" opacity="0.5" />
+
+        <line
+            x1="146"
+            y1="56"
+            x2="138"
+            y2="32"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+        />
+        <path
+            d="M 134 28 C 130 24, 134 18, 138 22 C 142 18, 146 24, 142 28 C 142 32, 138 36, 138 36 C 138 36, 134 32, 134 28 Z"
+            fill="var(--accent-emphasis)"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+        />
+    </g>
+</svg>
+)}
+
+{variant === 'icon' && (
+<svg
+    class:list={['mark', 'mark--icon', className]}
+    viewBox="0 0 56 56"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 12 26 C 10 18, 16 10, 24 7 C 32 4, 42 6, 46 14 C 50 22, 48 32, 44 40 C 42 46, 36 50, 30 49 C 24 50, 18 47, 14 42 C 12 36, 12 30, 12 26 Z"
+            fill="var(--accent-emphasis)"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+        />
+        <circle cx="22" cy="24" r="2.2" fill="currentColor" />
+        <circle cx="36" cy="24" r="2.2" fill="currentColor" />
+        <path d="M 24 34 C 27 36, 33 36, 36 34" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+    </g>
+</svg>
+)}
+
+{variant === 'silhouette' && (
+<svg
+    class:list={['mark', 'mark--silhouette', className]}
+    viewBox="0 0 64 64"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 14 30 C 12 22, 18 12, 28 9 C 40 6, 50 10, 54 18 C 58 26, 56 36, 52 46 C 48 52, 42 56, 34 54 C 26 56, 20 52, 16 46 C 14 40, 14 34, 14 30 Z"
+            fill="currentColor"
+        />
+        <circle cx="26" cy="28" r="2.4" fill="var(--bg)" />
+        <circle cx="42" cy="28" r="2.4" fill="var(--bg)" />
+    </g>
+</svg>
+)}
