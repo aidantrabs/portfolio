@@ -1,9 +1,17 @@
 import { gsap, prefersReducedMotion } from '../gsap';
+import { mountHeroCanvas } from './hero-canvas';
 
 export function animateHero() {
     introHero();
+    mountCanvas();
     if (prefersReducedMotion) return;
     bindHeroIdleFloat();
+}
+
+function mountCanvas() {
+    const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-canvas]');
+    if (!canvas) return;
+    mountHeroCanvas(canvas);
 }
 
 function introHero() {
