@@ -2,8 +2,6 @@ import { gsap, prefersReducedMotion } from '../gsap';
 
 export function animateHero() {
     introHero();
-    if (prefersReducedMotion) return;
-    bindHeroIdleFloat();
 }
 
 function introHero() {
@@ -61,19 +59,3 @@ function introHero() {
     );
 }
 
-function bindHeroIdleFloat() {
-    const scene = document.querySelector<HTMLElement>('[data-hero-scene]');
-    if (!scene) return;
-
-    const proxy = { y: 0 };
-    gsap.to(proxy, {
-        y: 1,
-        duration: 4,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        onUpdate: () => {
-            scene.style.setProperty('--float-y', `${(proxy.y - 0.5) * 14}px`);
-        },
-    });
-}
