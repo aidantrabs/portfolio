@@ -275,6 +275,21 @@
     opacity: 0;
 }
 
+.loading-indicator__mascot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - clamp(80px, 14vw, 140px)));
+    width: clamp(56px, 8vw, 96px);
+    color: var(--bg);
+    opacity: 0.85;
+    transition: opacity 0.4s ease;
+}
+
+.loading-indicator.is-done .loading-indicator__mascot {
+    opacity: 0;
+}
+
 .site-nav {
     position: fixed;
     top: 28px;
