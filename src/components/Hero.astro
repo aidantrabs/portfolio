@@ -1,41 +1,30 @@
 ---
 import InkMark from './illustrations/InkMark.astro';
-import Spot from './illustrations/Spot.astro';
+import HeroScene from './illustrations/HeroScene.astro';
 ---
 
 <section id="top" class="hero">
-    <Spot variant="shore" class="hero__spot hero__spot--shore" />
-    <Spot variant="mountains" class="hero__spot hero__spot--mountains" />
-    <Spot variant="cloud" class="hero__spot hero__spot--cloud" />
-    <Spot variant="bird" class="hero__spot hero__spot--bird" />
-    <Spot variant="bird" class="hero__spot hero__spot--bird-2" flip />
-    <Spot variant="sun" class="hero__spot hero__spot--sun" />
-    <div class="hero__display" data-hero-display>
-        <div class="hero-scene" data-hero-scene>
-            <div class="hero-scene__stage" data-hero-stage>
-                <div class="hero__topline" data-hero-topline>
-                    <span class="hero__eyebrow-folio">no. 04</span>
-                    <span class="hero__eyebrow-divider" aria-hidden="true"></span>
-                    <span class="hero__eyebrow">portfolio · mmxxvi</span>
-                </div>
+    <div class="hero__main" data-hero-main>
+        <div class="hero__type" data-hero-type>
+            <h1 class="hero-scene__layer hero-scene__layer--front">
+                <span class="hero-scene__line">aidan<span class="hero-scene__dot">.<InkMark kind="drip" class="hero__dot-drip" /></span></span>
+                <span class="hero-scene__line">traboulay</span>
+            </h1>
 
-                <h1 class="hero-scene__layer hero-scene__layer--front">
-                    <span class="hero-scene__line">aidan<span class="hero-scene__dot">.<InkMark kind="drip" class="hero__dot-drip" /></span></span>
-                    <span class="hero-scene__line">traboulay</span>
-                </h1>
+            <p class="hero__tagline" data-hero-tagline>
+                software engineer. <em>infrastructure built for the real world.</em>
+            </p>
+        </div>
 
-                <p class="hero__tagline" data-hero-tagline>
-                    software engineer. <em>infrastructure built for the real world.</em>
-                </p>
-            </div>
-
+        <div class="hero__art" data-hero-art aria-hidden="true">
+            <HeroScene />
         </div>
     </div>
 
     <div class="hero__bottombar" data-hero-bottombar>
         <div class="hero__data">
-            <span class="hero__data-label">based</span>
-            <span class="hero__data-value">trinidad and tobago</span>
+            <span class="hero__data-label">based in</span>
+            <span class="hero__data-value">trinidad &amp; tobago</span>
         </div>
         <div class="hero__data">
             <span class="hero__data-label">building since</span>
