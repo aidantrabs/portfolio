@@ -513,30 +513,30 @@
     opacity: 1;
 }
 
-.hero__mark {
+.hero__spot {
     display: none;
 }
 
 @media (min-width: 900px) {
-    .hero__mark {
+    .hero__spot {
         display: block;
         position: absolute;
         right: 4%;
-        bottom: -2%;
-        width: clamp(160px, 18vw, 240px);
+        bottom: 6rem;
+        width: clamp(240px, 24vw, 360px);
         height: auto;
         color: var(--ink);
+        opacity: 0.78;
         pointer-events: none;
         z-index: 0;
-        overflow: visible;
     }
 }
 
 @media (min-width: 1280px) {
-    .hero__mark {
+    .hero__spot {
         right: 6%;
-        bottom: -1%;
-        width: clamp(200px, 18vw, 280px);
+        bottom: 7rem;
+        width: clamp(280px, 24vw, 400px);
     }
 }
 

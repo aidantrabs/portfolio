@@ -1,0 +1,281 @@
+---
+type SpotVariant =
+    | 'horizon'
+    | 'desk'
+    | 'tower'
+    | 'path'
+    | 'mountains';
+
+interface Props {
+    class?: string | undefined;
+    variant: SpotVariant;
+    flip?: boolean | undefined;
+}
+const { class: className = '', variant, flip = false } = Astro.props;
+---
+
+{variant === 'horizon' && (
+<svg
+    class:list={['spot', `spot--${variant}`, flip && 'spot--flip', className]}
+    viewBox="0 0 360 200"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <circle cx="290" cy="78" r="28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45" />
+
+        <g stroke="currentColor" stroke-width="0.7" fill="none" opacity="0.55">
+            <path d="M 270 60 L 282 60 M 268 66 L 284 66 M 266 72 L 286 72 M 264 78 L 288 78 M 266 84 L 286 84 M 268 90 L 284 90 M 270 96 L 282 96" />
+        </g>
+
+        <path
+            d="M 0 150 C 30 120, 60 110, 90 130 C 110 142, 130 140, 150 130 C 180 115, 210 108, 230 125 C 250 142, 290 145, 320 130 C 340 120, 360 125, 360 130 L 360 200 L 0 200 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+        />
+        <g stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.5">
+            <path d="M 12 162 L 28 158 M 42 168 L 58 164 M 76 158 L 92 154 M 108 162 L 124 158 M 138 154 L 154 150 M 168 148 L 184 144 M 198 144 L 214 140 M 230 142 L 246 138 M 258 138 L 274 134 M 286 136 L 302 132 M 314 132 L 330 130 M 340 128 L 354 128" />
+        </g>
+
+        <path
+            d="M 40 130 L 38 110 M 42 130 L 44 112 M 50 132 L 48 118 M 56 130 L 60 114"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.9"
+            opacity="0.65"
+        />
+        <path
+            d="M 168 122 L 166 100 M 172 122 L 176 102 M 180 122 L 178 108 M 188 122 L 192 104"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.9"
+            opacity="0.65"
+        />
+
+        <path
+            d="M 110 156 C 130 152, 150 152, 175 156 C 200 160, 235 160, 275 156 C 310 152, 340 154, 358 158"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity="0.7"
+        />
+
+        <g transform="translate(108, 36)">
+            <path
+                d="M 0 22 C 0 8, 22 8, 22 22 C 22 28, 18 32, 14 34 L 8 34 C 4 32, 0 28, 0 22 Z"
+                fill="var(--accent-emphasis)"
+                stroke="currentColor"
+                stroke-width="0.9"
+            />
+            <path
+                d="M 2 22 L 20 22 M 4 14 L 18 14 M 6 28 L 16 28 M 11 8 L 11 34"
+                stroke="currentColor"
+                stroke-width="0.7"
+                opacity="0.7"
+                fill="none"
+            />
+            <line x1="6" y1="34" x2="8" y2="42" stroke="currentColor" stroke-width="0.7" />
+            <line x1="16" y1="34" x2="14" y2="42" stroke="currentColor" stroke-width="0.7" />
+            <rect x="8" y="42" width="6" height="4" fill="none" stroke="currentColor" stroke-width="0.7" />
+        </g>
+
+        <g stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.35">
+            <path d="M 80 160 L 84 160 M 96 164 L 100 164 M 116 168 L 120 168 M 200 158 L 204 158 M 232 156 L 236 156 M 268 160 L 272 160 M 312 162 L 316 162" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'desk' && (
+<svg
+    class:list={['spot', `spot--${variant}`, className]}
+    viewBox="0 0 280 220"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <line x1="20" y1="156" x2="260" y2="156" stroke="currentColor" stroke-width="1.4" />
+        <line x1="20" y1="158" x2="260" y2="158" stroke="currentColor" stroke-width="0.6" opacity="0.6" />
+
+        <rect x="60" y="100" width="100" height="56" fill="var(--bg)" stroke="currentColor" stroke-width="1.2" />
+        <rect x="66" y="106" width="88" height="44" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.55" />
+        <g stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.45">
+            <line x1="72" y1="116" x2="138" y2="116" />
+            <line x1="72" y1="124" x2="120" y2="124" />
+            <line x1="72" y1="132" x2="142" y2="132" />
+            <line x1="72" y1="140" x2="110" y2="140" />
+        </g>
+
+        <rect x="170" y="120" width="44" height="36" fill="var(--bg)" stroke="currentColor" stroke-width="1.2" />
+        <g stroke="currentColor" stroke-width="0.5" opacity="0.5" fill="none">
+            <line x1="176" y1="128" x2="208" y2="128" />
+            <line x1="176" y1="135" x2="200" y2="135" />
+            <line x1="176" y1="142" x2="206" y2="142" />
+            <line x1="176" y1="149" x2="190" y2="149" />
+        </g>
+
+        <line x1="30" y1="100" x2="30" y2="156" stroke="currentColor" stroke-width="1.2" />
+        <line x1="30" y1="100" x2="46" y2="60" stroke="currentColor" stroke-width="1.2" />
+        <path d="M 22 60 L 46 60 L 50 80 L 18 80 Z" fill="var(--accent-emphasis)" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+        <g stroke="currentColor" stroke-width="0.4" opacity="0.45" fill="none">
+            <line x1="24" y1="68" x2="46" y2="68" />
+            <line x1="22" y1="74" x2="48" y2="74" />
+        </g>
+
+        <circle cx="232" cy="148" r="8" fill="var(--bg)" stroke="currentColor" stroke-width="1" />
+        <line x1="232" y1="142" x2="232" y2="148" stroke="currentColor" stroke-width="1" />
+        <line x1="232" y1="148" x2="236" y2="150" stroke="currentColor" stroke-width="1" />
+
+        <g stroke="currentColor" stroke-width="0.5" opacity="0.4" fill="none">
+            <path d="M 60 168 L 68 168 M 80 172 L 96 172 M 120 170 L 132 170 M 180 168 L 192 168 M 220 170 L 232 170" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'tower' && (
+<svg
+    class:list={['spot', `spot--${variant}`, className]}
+    viewBox="0 0 200 260"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <line x1="20" y1="220" x2="180" y2="220" stroke="currentColor" stroke-width="1" />
+
+        <path
+            d="M 100 20 L 130 220 L 70 220 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+        />
+        <g stroke="currentColor" stroke-width="0.7" fill="none" opacity="0.55">
+            <line x1="78" y1="60" x2="122" y2="60" />
+            <line x1="74" y1="100" x2="126" y2="100" />
+            <line x1="70" y1="140" x2="130" y2="140" />
+            <line x1="68" y1="180" x2="132" y2="180" />
+        </g>
+        <g stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.45">
+            <line x1="80" y1="60" x2="84" y2="100" />
+            <line x1="120" y1="60" x2="116" y2="100" />
+            <line x1="74" y1="100" x2="78" y2="140" />
+            <line x1="126" y1="100" x2="122" y2="140" />
+            <line x1="70" y1="140" x2="76" y2="180" />
+            <line x1="130" y1="140" x2="124" y2="180" />
+        </g>
+
+        <line x1="100" y1="20" x2="100" y2="10" stroke="currentColor" stroke-width="1" />
+        <circle cx="100" cy="8" r="3" fill="var(--accent-emphasis)" stroke="currentColor" stroke-width="0.8" />
+
+        <g stroke="currentColor" stroke-width="0.6" opacity="0.5" fill="none">
+            <path d="M 40 224 L 50 224 M 60 226 L 70 226 M 140 226 L 150 226 M 160 224 L 172 224" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'path' && (
+<svg
+    class:list={['spot', `spot--${variant}`, className]}
+    viewBox="0 0 320 180"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 10 160 C 60 150, 120 140, 160 110 C 200 80, 240 70, 290 60"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+        />
+        <path
+            d="M 40 162 C 80 152, 130 142, 170 112 C 210 82, 250 72, 300 62"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.8"
+            opacity="0.55"
+            stroke-dasharray="3 4"
+        />
+
+        <path
+            d="M 100 130 L 96 100 M 104 130 L 108 102 M 112 130 L 110 108"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.9"
+            opacity="0.6"
+        />
+        <path
+            d="M 230 90 L 226 60 M 234 90 L 238 62 M 242 90 L 240 70"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.9"
+            opacity="0.6"
+        />
+
+        <line x1="270" y1="70" x2="270" y2="50" stroke="currentColor" stroke-width="1.2" />
+        <path
+            d="M 270 36 L 278 42 L 270 48 Z"
+            fill="var(--accent-emphasis)"
+            stroke="currentColor"
+            stroke-width="0.9"
+            stroke-linejoin="round"
+        />
+
+        <g stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.35">
+            <path d="M 20 168 L 36 168 M 60 170 L 78 170 M 140 158 L 152 158 M 200 130 L 212 130 M 260 100 L 274 100" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'mountains' && (
+<svg
+    class:list={['spot', `spot--${variant}`, className]}
+    viewBox="0 0 320 180"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 0 150 L 60 70 L 100 110 L 160 40 L 220 100 L 270 70 L 320 130 L 320 180 L 0 180 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M 142 70 L 160 40 L 178 70"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+        />
+
+        <g stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.45">
+            <path d="M 60 82 L 50 100 M 64 88 L 56 104 M 100 116 L 90 130 M 160 60 L 152 78 M 164 62 L 156 80 M 220 110 L 212 124 M 270 80 L 262 96 M 274 82 L 266 100" />
+        </g>
+
+        <g transform="translate(258, 22)">
+            <path
+                d="M 0 18 C 0 8, 18 8, 18 18 C 18 24, 14 28, 10 30 L 8 30 C 4 28, 0 24, 0 18 Z"
+                fill="var(--accent-emphasis)"
+                stroke="currentColor"
+                stroke-width="0.9"
+            />
+            <line x1="6" y1="30" x2="6" y2="38" stroke="currentColor" stroke-width="0.7" />
+            <line x1="12" y1="30" x2="12" y2="38" stroke="currentColor" stroke-width="0.7" />
+            <rect x="6" y="38" width="6" height="3" fill="none" stroke="currentColor" stroke-width="0.7" />
+        </g>
+
+        <g stroke="currentColor" stroke-width="0.4" fill="none" opacity="0.4">
+            <path d="M 20 158 L 32 158 M 50 162 L 64 162 M 100 158 L 116 158 M 180 156 L 196 156 M 240 160 L 256 160 M 282 158 L 298 158" />
+        </g>
+    </g>
+</svg>
+)}
