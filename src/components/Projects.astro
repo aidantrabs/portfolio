@@ -2,6 +2,7 @@
 import projects from '../content/projects.json';
 import studios from '../content/studios.json';
 import WorkRow from './WorkRow.astro';
+import Spot from './illustrations/Spot.astro';
 
 type Glyph = 'server' | 'cli' | 'web' | 'tools' | 'data' | 'experiment';
 
@@ -43,6 +44,7 @@ function handleFromUrl(url: string): string {
 ---
 
 <section id="work" class="section section--projects">
+    <Spot variant="tower" class="section__spot section__spot--work" />
     <div class="section__header">
         <h2 class="section__title" data-section-title>work</h2>
         <span class="section__count">(pickup works)</span>
