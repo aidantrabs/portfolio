@@ -14,14 +14,3 @@
 </p>
 
 <p align="center">personal portfolio.</p>
-
-## Deploy
-
-Auto-deploys to Cloudflare Pages on every push to `main` via GitHub Actions (`.github/workflows/ci.yml`).
-
-Required GitHub repository secrets:
-
-- `CLOUDFLARE_API_TOKEN` - Pages:Edit scope
-- `CLOUDFLARE_ACCOUNT_ID`
-
-Project name: `aidantraboulay-portfolio`.
