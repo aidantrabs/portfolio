@@ -9,7 +9,10 @@ type SpotVariant =
     | 'bird'
     | 'grass'
     | 'sun'
-    | 'pine';
+    | 'pine'
+    | 'cloud'
+    | 'kite'
+    | 'shore';
 
 interface Props {
     class?: string | undefined;
@@ -406,6 +409,89 @@ const { class: className = '', variant, flip = false } = Astro.props;
         <line x1="40" y1="116" x2="40" y2="132" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
         <g stroke="currentColor" stroke-width="0.5" opacity="0.45" fill="none">
             <path d="M 28 32 L 32 32 M 30 56 L 36 56 M 24 80 L 32 80 M 28 104 L 38 104" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'cloud' && (
+<svg
+    class:list={['spot', `spot--${variant}`, flip && 'spot--flip', className]}
+    viewBox="0 0 140 60"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 20 42 C 8 42, 4 32, 14 28 C 14 18, 28 14, 36 22 C 42 12, 60 12, 66 22 C 74 14, 92 16, 96 26 C 110 24, 122 32, 118 42 C 112 48, 28 48, 20 42 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+        />
+        <g stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.45">
+            <path d="M 30 36 C 36 32, 46 32, 50 36 M 60 38 C 68 34, 78 34, 84 38 M 90 36 C 96 34, 102 34, 108 36" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'kite' && (
+<svg
+    class:list={['spot', `spot--${variant}`, flip && 'spot--flip', className]}
+    viewBox="0 0 80 140"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 40 12 L 60 36 L 40 80 L 20 36 Z"
+            fill="var(--accent-emphasis)"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+        />
+        <line x1="40" y1="12" x2="40" y2="80" stroke="currentColor" stroke-width="0.7" opacity="0.6" />
+        <line x1="20" y1="36" x2="60" y2="36" stroke="currentColor" stroke-width="0.7" opacity="0.6" />
+        <path
+            d="M 40 80 Q 50 90, 40 100 T 40 130"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+        />
+        <g stroke="currentColor" stroke-width="0.9" fill="none" stroke-linecap="round">
+            <line x1="36" y1="92" x2="42" y2="98" />
+            <line x1="42" y1="110" x2="36" y2="116" />
+        </g>
+    </g>
+</svg>
+)}
+
+{variant === 'shore' && (
+<svg
+    class:list={['spot', `spot--${variant}`, flip && 'spot--flip', className]}
+    viewBox="0 0 480 60"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+    preserveAspectRatio="none"
+>
+    <g filter="url(#rough-soft)">
+        <path
+            d="M 0 28 C 30 22, 60 24, 100 30 C 140 36, 180 22, 220 26 C 260 30, 300 18, 340 24 C 380 30, 420 22, 480 28"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity="0.55"
+        />
+        <g stroke="currentColor" stroke-width="0.5" opacity="0.45" fill="none">
+            <path d="M 10 40 L 24 40 M 40 44 L 58 44 M 70 38 L 88 38 M 110 42 L 130 42 M 150 38 L 170 38 M 190 44 L 210 44 M 230 40 L 250 40 M 270 42 L 290 42 M 310 38 L 330 38 M 350 42 L 370 42 M 390 38 L 410 38 M 430 42 L 450 42" />
+        </g>
+        <g stroke="currentColor" stroke-width="0.7" fill="none" stroke-linecap="round">
+            <path d="M 80 28 L 78 22 M 84 28 L 86 22 M 200 24 L 198 18 M 204 24 L 206 18 M 340 22 L 338 16 M 344 22 L 346 16" />
         </g>
     </g>
 </svg>
